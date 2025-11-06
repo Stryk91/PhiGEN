@@ -196,3 +196,4 @@ git commit --no-verify -m "your message"
 3. Check `phigen hooks` regularly to ensure hooks are working
 4. Use Docker for consistent testing environment
 5. Discord notifications keep your team informed automatically
+# Post-commit hook fixed for Discord notifications
