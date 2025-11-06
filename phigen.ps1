@@ -16,6 +16,10 @@ function Show-Help {
     Write-Host "  .\phigen.ps1 shell        - Open interactive shell in container"
     Write-Host "  .\phigen.ps1 stop         - Stop all containers"
     Write-Host ""
+    Write-Host "Discord MCP:" -ForegroundColor Magenta
+    Write-Host "  .\phigen.ps1 discord-mcp  - Start Discord MCP server"
+    Write-Host "  .\phigen.ps1 discord-stop - Stop Discord MCP server"
+    Write-Host ""
     Write-Host "Code Quality:" -ForegroundColor Yellow
     Write-Host "  .\phigen.ps1 test         - Run tests in Docker"
     Write-Host "  .\phigen.ps1 lint         - Run linting checks"
@@ -144,6 +148,20 @@ function Interactive-Commit {
     git commit -m $msg
 }
 
+function Start-DiscordMCP {
+    Write-Host "🤖 Starting Discord MCP server..." -ForegroundColor Magenta
+    docker-compose --profile mcp up -d discord-mcp
+    Write-Host "✅ Discord MCP running on port 3000" -ForegroundColor Green
+    Write-Host "Bot should now be online in your Discord server!" -ForegroundColor Green
+}
+
+function Stop-DiscordMCP {
+    Write-Host "🛑 Stopping Discord MCP server..." -ForegroundColor Cyan
+    docker-compose stop discord-mcp
+    docker-compose rm -f discord-mcp
+    Write-Host "✅ Discord MCP stopped" -ForegroundColor Green
+}
+
 # Main command router
 switch ($Command.ToLower()) {
     "help" { Show-Help }
@@ -151,6 +169,8 @@ switch ($Command.ToLower()) {
     "dev" { Start-Dev }
     "shell" { Open-Shell }
     "stop" { Stop-Containers }
+    "discord-mcp" { Start-DiscordMCP }
+    "discord-stop" { Stop-DiscordMCP }
     "test" { Run-Tests }
     "lint" { Run-Lint }
     "format" { Run-Format }

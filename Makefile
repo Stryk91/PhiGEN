@@ -1,4 +1,4 @@
-.PHONY: help build dev shell test lint scan clean install run format security docker-clean
+.PHONY: help build dev shell test lint scan clean install run format security docker-clean discord-mcp discord-stop
 
 # Default target
 help:
@@ -10,6 +10,10 @@ help:
 	@echo "  make dev          - Start development container"
 	@echo "  make shell        - Open interactive shell in container"
 	@echo "  make stop         - Stop all containers"
+	@echo ""
+	@echo "Discord MCP:"
+	@echo "  make discord-mcp  - Start Discord MCP server"
+	@echo "  make discord-stop - Stop Discord MCP server"
 	@echo ""
 	@echo "Code Quality:"
 	@echo "  make test         - Run tests in Docker"
@@ -130,6 +134,19 @@ commit:
 	fi; \
 	git commit -m "$$msg"
 
+# Discord MCP commands
+discord-mcp:
+	@echo "🤖 Starting Discord MCP server..."
+	docker-compose --profile mcp up -d discord-mcp
+	@echo "✅ Discord MCP running on port 3000"
+	@echo "Bot should now be online in your Discord server!"
+
+discord-stop:
+	@echo "🛑 Stopping Discord MCP server..."
+	docker-compose stop discord-mcp
+	docker-compose rm -f discord-mcp
+	@echo "✅ Discord MCP stopped"
+
 # Docker cleanup
 docker-clean:
 	@echo "🗑️  Removing Docker containers and images..."
@@ -147,3 +164,4 @@ t: test
 l: lint
 r: run
 c: clean
+d: discord-mcp

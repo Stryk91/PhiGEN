@@ -47,3 +47,15 @@ services:
     command: sh -c "pylint **/*.py || true && black --check ."
     profiles:
       - lint
+
+  # Discord MCP Server
+  discord-mcp:
+    image: barryy625/mcp-discord:latest
+    container_name: phigen-discord-mcp
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    profiles:
+      - mcp
