@@ -59,3 +59,19 @@ services:
     restart: unless-stopped
     profiles:
       - mcp
+
+  # Discord MCP Bridge - connects Python bot to MCP
+  discord-mcp-bridge:
+    build: .
+    container_name: phigen-discord-bridge
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5000:5000"
+    command: python BotFILES/discord_mcp_bridge.py
+    restart: unless-stopped
+    profiles:
+      - mcp
