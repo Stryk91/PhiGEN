@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  phigen-dev:
+    build: .
+    container_name: phigen-dev
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix  # For GUI if needed
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - PYTHONUNBUFFERED=1
+    working_dir: /app
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  # Security scanning service
+  phigen-scan:
+    image: python:3.11-alpine
+    container_name: phigen-scan
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: sh -c "pip install bandit safety -q && bandit -ll -r . && safety check --json"
+    profiles:
+      - scan
+
+  # Testing service
+  phigen-test:
+    build: .
+    container_name: phigen-test
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: pytest -v
+    profiles:
+      - test
+
+  # Linting service
+  phigen-lint:
+    build: .
+    container_name: phigen-lint
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "pylint **/*.py || true && black --check ."
+    profiles:
+      - lint

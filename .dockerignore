@@ -1,0 +1,49 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Git
+.git/
+.gitignore
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Temporary files
+TMPPASSWORDS/
+TEMPSVG/
+temp_*.png
+*.tmp
+nul
+
+# Test files
+test*.txt
+
+# Sensitive
+.env
+*.key
+*.pem
+credentials.json
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Documentation
+docs/
+*.md
