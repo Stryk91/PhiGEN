@@ -69,7 +69,7 @@ services:
       - PYTHONUNBUFFERED=1
     ports:
       - "5000:5000"
-    command: python BotFILES/discord_mcp_bridge.py
+    command: python src/phigen/bots/discord_mcp_bridge.py
     restart: unless-stopped
     profiles:
       - mcp
@@ -100,7 +100,7 @@ services:
       - OLLAMA_HOST=http://ollama:11434
     depends_on:
       - ollama
-    command: python ai_tools/code_reviewer.py
+    command: python src/ai_tools/code_reviewer.py
     profiles:
       - ai
 
@@ -117,7 +117,7 @@ services:
       - OLLAMA_HOST=http://ollama:11434
     depends_on:
       - ollama
-    command: python ai_tools/log_analyzer.py
+    command: python src/ai_tools/log_analyzer.py
     profiles:
       - ai
 
@@ -137,7 +137,7 @@ services:
       - "8000:8000"
     depends_on:
       - ollama
-    command: python -m ai_tools.api_server
+    command: python -m src.ai_tools.api_server
     restart: unless-stopped
     profiles:
       - ai
@@ -155,7 +155,7 @@ services:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
     depends_on:
       - ollama
-    command: python ai_tools/discord_ai_bot.py
+    command: python src/ai_tools/discord_ai_bot.py
     restart: unless-stopped
     profiles:
       - ai-single
@@ -174,7 +174,7 @@ services:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     depends_on:
       - ollama
-    command: python ai_tools/discord_multimodel_bot.py
+    command: python src/ai_tools/discord_multimodel_bot.py
     restart: unless-stopped
     profiles:
       - ai
