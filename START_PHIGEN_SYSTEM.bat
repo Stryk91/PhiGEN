@@ -107,16 +107,9 @@ echo ============================================================
 echo.
 
 REM ============================================================
-REM STEP 4: Status Check & Dashboard
+REM STEP 4: Launch Status Monitor GUI
 REM ============================================================
-echo [4/4] Checking system status...
-echo.
-
-REM Check Docker containers
-docker ps --filter "name=phigen" --format "table {{.Names}}\t{{.Status}}" | findstr "phigen"
-
-echo.
-echo ============================================================
+echo [4/4] Launching PhiGEN Status Monitor...
 echo.
 
 color 0A
@@ -124,44 +117,35 @@ echo.
 echo  *** PHIGEN SYSTEM IS NOW RUNNING! ***
 echo.
 echo ============================================================
-echo  SYSTEM COMPONENTS:
+echo  Opening Status Monitor GUI...
 echo ============================================================
 echo.
-echo  [Discord Bot]
-echo    Status: Running in Docker
-echo    Models: Phi 3.5, Mistral 7B, Granite 3B, Claude Sonnet
-echo    Commands: !help_ai in Discord
+echo  The Status Monitor will show:
+echo    - Real-time module status (green = active, grey = offline)
+echo    - System logs and events
+echo    - Active/Inactive count
 echo.
-echo  [DC Bridge]
-echo    Status: Running in separate window
-echo    Command: !send_to_dc ^<message^>
-echo    Purpose: Send messages to Claude Code from Discord
-echo.
-echo  [AI Services]
-echo    Ollama API: http://localhost:11434
-echo    REST API: http://localhost:8000
+echo  Keep the Status Monitor window open to track system health.
 echo.
 echo ============================================================
-echo  QUICK TESTS:
-echo ============================================================
 echo.
-echo  In Discord:
-echo    !status          - Check model availability
-echo    !ai Who are you? - Test personality
-echo    !send_to_dc Test - Send to Claude Code
-echo    !help_ai         - Full command list
+
+REM Launch the status monitor GUI
+start "PhiGEN Status Monitor" /MIN cmd /c ".\.venv\Scripts\python.exe src\phigen\status_monitor.py"
+
+echo Status Monitor launched!
 echo.
 echo ============================================================
 echo  TO STOP SYSTEM:
 echo ============================================================
 echo.
 echo  Run: STOP_PHIGEN_SYSTEM.bat
-echo  Or:  docker-compose down
-echo       Close DC Bridge window
+echo  Or:  Close Status Monitor and DC Bridge windows
+echo       docker-compose -f config\docker\docker-compose.yml down
 echo.
 echo ============================================================
 echo.
-echo Press any key to exit this launcher...
-echo (Services will keep running in background)
+echo This launcher window will now close...
+echo Services continue running in background.
 echo.
-pause >nul
+timeout /t 3 /nobreak >nul
