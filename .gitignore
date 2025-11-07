@@ -67,7 +67,6 @@ secrets.json
 *.pem
 
 # Test files
-test.txt
 test2.txt
 test3.txt
 test4.txt
@@ -97,3 +96,5 @@ sftp-config.json
 # Batch scripts with credentials
 qt_env.bat
 # Discord webhook fixed with --insecure flag for Windows
+!/test.txt
+!/test.txt

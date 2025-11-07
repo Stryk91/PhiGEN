@@ -1,0 +1,18 @@
+StartChar: slash
+Encoding: 47 47 22
+Width: 1200
+GlyphClass: 1
+Flags: WO
+LayerCount: 2
+Fore
+SplineSet
+98 300 m 25,0,-1
+ 300 264 l 5,1,-1
+ 1070 1030 l 2,2,3
+ 1100 1060 1100 1060 1100 1100 c 1026,4,-1
+1100 1098 m 25,5,-1
+ 900 1144 l 1,6,-1
+ 130 370 l 2,7,8
+ 100 340 100 340 100 300 c 1026,9,-1
+EndSplineSet
+EndChar

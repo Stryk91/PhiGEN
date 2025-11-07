@@ -1,0 +1,10 @@
+{
+  "good_responses": [],
+  "bad_responses": [],
+  "very_bad_responses": [],
+  "stats": {
+    "total_good": 0,
+    "total_bad": 0,
+    "total_very_bad": 0
+  }
+}

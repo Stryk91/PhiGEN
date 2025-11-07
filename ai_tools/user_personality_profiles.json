@@ -1,0 +1,46 @@
+{
+  "lordcain": {
+    "message_count": 1810,
+    "avg_words_per_message": 5.58,
+    "australianness_score": 2,
+    "positivity_score": 47,
+    "gaming_focus_score": 1,
+    "swears_per_message": 0.06,
+    "compliments_per_message": 0.04,
+    "aussie_slang_per_message": 0.04,
+    "gaming_terms_per_message": 0.03
+  },
+  "keithygeorge.": {
+    "message_count": 4386,
+    "avg_words_per_message": 5.39,
+    "australianness_score": 1,
+    "positivity_score": 48,
+    "gaming_focus_score": 1,
+    "swears_per_message": 0.04,
+    "compliments_per_message": 0.02,
+    "aussie_slang_per_message": 0.04,
+    "gaming_terms_per_message": 0.04
+  },
+  "johnson9979": {
+    "message_count": 1348,
+    "avg_words_per_message": 4.58,
+    "australianness_score": 1,
+    "positivity_score": 49,
+    "gaming_focus_score": 1,
+    "swears_per_message": 0.03,
+    "compliments_per_message": 0.02,
+    "aussie_slang_per_message": 0.04,
+    "gaming_terms_per_message": 0.04
+  },
+  "garrosh0651": {
+    "message_count": 1384,
+    "avg_words_per_message": 4.75,
+    "australianness_score": 1,
+    "positivity_score": 49,
+    "gaming_focus_score": 0,
+    "swears_per_message": 0.03,
+    "compliments_per_message": 0.03,
+    "aussie_slang_per_message": 0.03,
+    "gaming_terms_per_message": 0.03
+  }
+}

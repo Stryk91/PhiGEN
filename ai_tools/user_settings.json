@@ -1,0 +1,11 @@
+{
+  "users": {},
+  "default_settings": {
+    "model": "phi",
+    "temperature": 50,
+    "length": 50,
+    "tone": "casual",
+    "context_window": 15,
+    "personality": "phigen"
+  }
+}

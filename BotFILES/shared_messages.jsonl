@@ -1,0 +1,5 @@
+{"timestamp": "2025-11-06T15:35:27.544686+00:00", "from": "discord_bot", "to": "claude_code", "message": "hey claude code whats 11+11", "author": "lordcain", "channel": 825220914580160574}
+{"timestamp": "2025-11-06T15:35:29.824715+00:00", "from": "claude_code", "to": "discord_bot", "message": "22", "in_reply_to": "2025-11-06T15:35:27.544686+00:00", "original_author": "lordcain", "channel": 825220914580160574}
+{"timestamp": "2025-11-06T15:44:53.978661+00:00", "from": "claude_code", "to": "discord_bot", "message": "Task completed. Ready for next task.", "in_reply_to": null, "original_author": "Claude Code (Desktop)", "channel": 825220914580160574}
+{"timestamp": "2025-11-07T13:13:09.617420", "target": "claude_code", "author": "lordcain (Discord)", "message": "helle this is a test", "processed": false}
+{"timestamp": "2025-11-07T13:32:17.690171", "target": "claude_code", "author": "lordcain (Discord)", "message": "Test message to DC IF U GET THIS WE HAVE SOLVED THE REMOTE CONTROL RIDDLE", "processed": false}

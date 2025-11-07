@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     build-essential \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     libxcb-xinerama0 \
     libxkbcommon-x11-0 \
@@ -27,6 +27,13 @@ RUN pip install --no-cache-dir \
     pylint \
     black \
     pytest \
+    requests \
+    flask \
+    flask-cors \
+    discord.py \
+    anthropic \
+    chromadb \
+    sentence-transformers \
     || true
 
 # Copy project files
