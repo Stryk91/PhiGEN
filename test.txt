@@ -1,8 +1,0 @@
-File: test.txt
-Created by JC Autonomous Worker a loser LOL
-
-Task: Create test.txt
-
----
-Auto-generated file
-test

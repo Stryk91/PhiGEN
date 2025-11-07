@@ -95,6 +95,21 @@ sftp-config.json
 
 # Batch scripts with credentials
 qt_env.bat
-# Discord webhook fixed with --insecure flag for Windows
-!/test.txt
+
+# Runtime data files
+ai_tools/conversation_*.txt
+ai_tools/conversation_*.jsonl
+ai_tools/*.json
+ai_tools/chroma_db/
+
+# Old/archived directories (should not be in root)
+old/
+DO NOT USE YET/
+RESOURCES FROM OUTSIDE PROJECT(NOT PART OF CODEBASE YET)/
+
+# Prevent Python files in root (enforce src/ structure)
+/*.py
+!setup.py
+
+# Test files
 !/test.txt
