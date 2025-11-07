@@ -1,0 +1,152 @@
+╔════════════════════════════════════════════════════════════╗
+║           PhiGEN System - Quick Start Guide               ║
+╚════════════════════════════════════════════════════════════╝
+
+📋 PREREQUISITES
+────────────────────────────────────────────────────────────
+1. Docker Desktop - Must be running
+2. Discord bot token in .env file
+3. Python virtual environment created
+
+🚀 STARTING THE SYSTEM
+────────────────────────────────────────────────────────────
+
+Option 1: Master Launcher (Recommended)
+   Double-click: START_PHIGEN_SYSTEM.bat
+
+   This automatically:
+   ✅ Checks Docker is running
+   ✅ Starts all Docker services
+   ✅ Launches DC Bridge watcher
+   ✅ Shows status dashboard
+
+Option 2: Manual Start
+   1. docker-compose --profile ai up -d
+   2. Double-click: start_dc_bridge.bat
+
+🛑 STOPPING THE SYSTEM
+────────────────────────────────────────────────────────────
+
+Option 1: Shutdown Script (Recommended)
+   Double-click: STOP_PHIGEN_SYSTEM.bat
+
+Option 2: Manual Stop
+   1. docker-compose down
+   2. Close DC Bridge window
+
+📊 CHECKING STATUS
+────────────────────────────────────────────────────────────
+
+Quick Status Check:
+   Double-click: STATUS_CHECK.bat
+
+In Discord:
+   !status - Check model availability
+
+🎮 DISCORD COMMANDS
+────────────────────────────────────────────────────────────
+
+Essential Commands:
+   !help_ai          - Full command list
+   !status           - Check models
+   !send_to_dc <msg> - Send to Claude Code
+
+AI Models:
+   !ai <question>    - Default (Mistral)
+   !mistral <q>      - Fast conversation
+   !granite <q>      - Code help
+   !claude <q>       - Complex tasks
+   !compare <q>      - Ask all models
+
+Auto-Response:
+   !auto_on          - Enable in channel
+   !auto_off         - Disable
+
+Learning:
+   !stats_conv       - Conversation stats
+   !learn_patterns   - What bot learned
+   !context          - Recent context
+
+🔧 COMPONENTS
+────────────────────────────────────────────────────────────
+
+1. Discord Bot (Docker)
+   - Multi-model AI (Phi, Mistral, Granite, Claude)
+   - Australian English personality
+   - Created by: JC and STRYK
+   - Learns from conversations
+
+2. DC Bridge (Windows)
+   - Monitors: dc_message_trigger.txt
+   - Executes: Win+R → DC(DESKC) → Send
+   - Purpose: Discord → Claude Code control
+
+3. AI Services (Docker)
+   - Ollama: http://localhost:11434
+   - REST API: http://localhost:8000
+   - Models: 4 local + Claude API
+
+📁 KEY FILES
+────────────────────────────────────────────────────────────
+
+START_PHIGEN_SYSTEM.bat  - Master launcher
+STOP_PHIGEN_SYSTEM.bat   - Shutdown script
+STATUS_CHECK.bat         - Quick status
+start_dc_bridge.bat      - DC Bridge only
+
+🧪 TESTING
+────────────────────────────────────────────────────────────
+
+1. Test Bot Identity:
+   !ai Who are you?
+   Expected: "PhiGEN, created by JC and STRYK"
+
+2. Test Remote Control:
+   !send_to_dc Test message
+   Expected: Message appears in Claude Code
+
+3. Test Auto-Response:
+   !auto_on
+   Then just chat normally
+   Expected: Bot responds to every message
+
+❗ TROUBLESHOOTING
+────────────────────────────────────────────────────────────
+
+Problem: Docker not starting
+Solution: Ensure Docker Desktop is running
+
+Problem: DC Bridge errors
+Solution: Check PyAutoGUI installed:
+   pip install pyautogui pygetwindow
+
+Problem: Bot not responding
+Solution: Check logs:
+   docker logs phigen-discord-multimodel
+
+Problem: Models not available
+Solution: docker exec phigen-ollama ollama list
+
+🎯 TYPICAL WORKFLOW
+────────────────────────────────────────────────────────────
+
+Morning:
+   1. Run START_PHIGEN_SYSTEM.bat
+   2. Test with !status in Discord
+   3. System runs all day
+
+Evening:
+   1. Run STOP_PHIGEN_SYSTEM.bat
+   2. Everything shuts down gracefully
+
+Remote Use:
+   - Access Discord from anywhere
+   - Use !send_to_dc from phone/tablet
+   - Control Claude Code remotely
+
+────────────────────────────────────────────────────────────
+For detailed documentation, see:
+   - BOT_PERSONALITY_CONFIG.md
+   - DOCKER_TO_WINDOWS_BRIDGE.md
+   - SESSION_SUMMARY.md
+────────────────────────────────────────────────────────────

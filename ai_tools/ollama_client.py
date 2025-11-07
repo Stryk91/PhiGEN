@@ -63,7 +63,7 @@ class OllamaClient:
             response = requests.post(
                 f"{self.base_url}/generate",
                 json=payload,
-                timeout=120
+                timeout=300
             )
             response.raise_for_status()
 
@@ -95,7 +95,7 @@ class OllamaClient:
             response = requests.post(
                 f"{self.base_url}/chat",
                 json=payload,
-                timeout=120
+                timeout=300
             )
             response.raise_for_status()
 

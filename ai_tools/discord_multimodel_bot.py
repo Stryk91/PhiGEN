@@ -1717,10 +1717,10 @@ Now generate the function for: {command_name} - {description}"""
                 # Add current message
                 prompt_with_context += f"\nUser message from {message.author.name}: {message.content}"
 
-                # Use Phi 3.5 for fast responses
+                # Use Claude Haiku for fast, high-quality responses
                 response, model = self.router.route(
                     prompt_with_context,
-                    model="phi",
+                    model="haiku",
                     task_type="chat"
                 )
 
@@ -1744,7 +1744,7 @@ Now generate the function for: {command_name} - {description}"""
                     user_name=message.author.name,
                     message=message.content,
                     bot_response=response,
-                    model_used="phi"
+                    model_used=model  # Will be "haiku"
                 )
 
                 # Reply to the message

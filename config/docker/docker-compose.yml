@@ -1,0 +1,183 @@
+services:
+  phigen-dev:
+    build: .
+    container_name: phigen-dev
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix  # For GUI if needed
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - PYTHONUNBUFFERED=1
+    working_dir: /app
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  # Security scanning service
+  phigen-scan:
+    image: python:3.11-alpine
+    container_name: phigen-scan
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: sh -c "pip install bandit safety -q && bandit -ll -r . && safety check --json"
+    profiles:
+      - scan
+
+  # Testing service
+  phigen-test:
+    build: .
+    container_name: phigen-test
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: pytest -v
+    profiles:
+      - test
+
+  # Linting service
+  phigen-lint:
+    build: .
+    container_name: phigen-lint
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "pylint **/*.py || true && black --check ."
+    profiles:
+      - lint
+
+  # Discord MCP Server
+  discord-mcp:
+    image: barryy625/mcp-discord:latest
+    container_name: phigen-discord-mcp
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    profiles:
+      - mcp
+
+  # Discord MCP Bridge - connects Python bot to MCP
+  discord-mcp-bridge:
+    build: .
+    container_name: phigen-discord-bridge
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5000:5000"
+    command: python BotFILES/discord_mcp_bridge.py
+    restart: unless-stopped
+    profiles:
+      - mcp
+
+  # Ollama - Local AI Model Server
+  ollama:
+    image: ollama/ollama:latest
+    container_name: phigen-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    profiles:
+      - ai
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+
+  # AI Code Reviewer - Uses Ollama for code analysis
+  ai-code-reviewer:
+    build: .
+    container_name: phigen-ai-reviewer
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    command: python ai_tools/code_reviewer.py
+    profiles:
+      - ai
+
+  # AI Log Analyzer - Automated log analysis
+  ai-log-analyzer:
+    build: .
+    container_name: phigen-ai-logs
+    volumes:
+      - .:/app
+      - /var/log:/var/log:ro
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    command: python ai_tools/log_analyzer.py
+    profiles:
+      - ai
+
+  # AI REST API - HTTP interface for AI features
+  ai-api:
+    build: .
+    container_name: phigen-ai-api
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://ollama:11434
+      - API_PORT=8000
+      - API_HOST=0.0.0.0
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    command: python -m ai_tools.api_server
+    restart: unless-stopped
+    profiles:
+      - ai
+
+  # Discord AI Bot - Discord bot with AI commands (single model)
+  discord-ai-bot:
+    build: .
+    container_name: phigen-discord-ai
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://ollama:11434
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+    depends_on:
+      - ollama
+    command: python ai_tools/discord_ai_bot.py
+    restart: unless-stopped
+    profiles:
+      - ai-single
+
+  # Multi-Model Discord Bot - Routes between Mistral, Granite, and Claude
+  discord-multimodel-bot:
+    build: .
+    container_name: phigen-discord-multimodel
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://ollama:11434
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    depends_on:
+      - ollama
+    command: python ai_tools/discord_multimodel_bot.py
+    restart: unless-stopped
+    profiles:
+      - ai
+
+volumes:
+  ollama_data:

@@ -1,0 +1,1 @@
+$QUEUE='E:\PythonProjects\PhiGEN\BotFILES\task_queue.txt';$LOG='E:\PythonProjects\PhiGEN\BotFILES\executor.log';if(Test-Path $QUEUE){"$(Get-Date) - Queue found"|Out-File -Append $LOG;$nums=Get-Content $QUEUE;Remove-Item $QUEUE;"Executed: $nums"|Out-File -Append $LOG}

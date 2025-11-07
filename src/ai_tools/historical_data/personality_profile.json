@@ -1,0 +1,91 @@
+{
+  "vocabulary_richness": 28039,
+  "avg_message_length": 26.778145569791693,
+  "message_length_variance": 655.9498325390933,
+  "favorite_words": {
+    "cain": 5166,
+    "like": 4531,
+    "get": 4107,
+    "got": 3961,
+    "ya": 3954,
+    "one": 3671,
+    "u": 3329,
+    "think": 2750,
+    "good": 2702,
+    "yeah": 2684,
+    "gar": 2621,
+    "im": 2515,
+    "fuck": 2457,
+    "oh": 2431,
+    "https": 2352,
+    "would": 2345,
+    "keith": 2291,
+    "go": 2285,
+    "fucking": 2238,
+    "know": 2227
+  },
+  "common_phrases": {
+    "gon na": 574,
+    "wan na": 412,
+    "looks like": 374,
+    "got ta": 356,
+    "oh come": 330,
+    "last night": 296,
+    "look like": 178,
+    "ive got": 176,
+    "oh cmon": 173,
+    "dont think": 170,
+    "im going": 163,
+    "gee wizz": 160,
+    "oh god": 150,
+    "ya reckon": 147,
+    "solo shuffle": 142
+  },
+  "emoji_preferences": {
+    ":/": 2360,
+    "🐀": 262,
+    "🤣": 173,
+    "⠀": 162,
+    "⣿": 102,
+    "😂": 99,
+    "💀": 87,
+    "️": 58,
+    "🔧": 51,
+    "🔴": 46
+  },
+  "punctuation_style": {
+    "?": 8380,
+    ".": 7756,
+    ",": 2928,
+    ":": 2836,
+    "!": 1947,
+    "\"": 1935,
+    ";": 64
+  },
+  "sentence_type_distribution": {
+    "statement": 178017,
+    "question": 7199,
+    "exclamation": 1041
+  },
+  "conversation_flow_patterns": {
+    "question": [
+      [
+        "statement",
+        85968
+      ]
+    ],
+    "statement": [
+      [
+        "question",
+        85967
+      ],
+      [
+        "statement",
+        12649
+      ]
+    ]
+  },
+  "verbosity_score": 0.35,
+  "emoji_frequency": 0.0230083701275835,
+  "question_frequency": 0.0386508963421509
+}
