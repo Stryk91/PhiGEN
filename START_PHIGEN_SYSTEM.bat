@@ -69,7 +69,7 @@ echo   - Ollama (Phi 3.5, Mistral, Granite, BakLLaVA)
 echo   - AI REST API
 echo.
 
-docker-compose --profile ai up -d
+docker-compose -f config\docker\docker-compose.yml --profile ai up -d
 
 if errorlevel 1 (
     color 0C
@@ -97,7 +97,7 @@ echo [3/4] Starting Discord to Claude Code bridge...
 echo.
 
 REM Start the bridge in a new window
-start "PhiGEN DC Bridge" cmd /k ".\.venv\Scripts\python.exe watch_and_send_to_dc.py"
+start "PhiGEN DC Bridge" cmd /k ".\.venv\Scripts\python.exe scripts\utils\watch_and_send_to_dc.py"
 
 echo [OK] DC Bridge watcher started in new window
 echo      Keep that window open to process !send_to_dc commands

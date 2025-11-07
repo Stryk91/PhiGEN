@@ -27,7 +27,7 @@ REM ============================================================
 echo [1/2] Stopping Docker services...
 echo.
 
-docker-compose --profile ai down
+docker-compose -f config\docker\docker-compose.yml --profile ai down
 
 if errorlevel 1 (
     echo [WARNING] Some Docker services may not have stopped cleanly
