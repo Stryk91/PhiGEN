@@ -1,0 +1,6 @@
+{
+  "Temperature": {
+    "description": "chnages how concise or creative the bots are in their response",
+    "code": "async def custom_Temperature(self, ctx, *args):\n    user = ctx.author.mention\n    if len(args) > 0 and args[0].lower() == \"concise\":\n        await ctx.send(f\"Nice to meet you {user}! How can I help you?\")\n    elif len(args) > 0 and args[0].lower() == \"creative\":\n        await ctx.send(f\"Hey {user}, let's get this party started! What would you like to do?\")\n    else:\n        await ctx.send(f\"Hello {user}! How can I help you today?\")\n"
+  }
+}
