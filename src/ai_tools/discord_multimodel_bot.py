@@ -146,7 +146,7 @@ class MultiModelAI(commands.Cog):
 
         # Add personality guidelines to question
         enhanced_question = (
-            f"[You are PhiGEN, created by JC and STRYK. Use Australian English. "
+            f"[You are PhiBOT, created by JC and STRYK. Use Australian English. "
             f"Never mention being an AI/bot/assistant.]\n\n{question}"
         )
 
@@ -187,7 +187,7 @@ class MultiModelAI(commands.Cog):
         """
         # Add personality guidelines for code responses
         enhanced_question = (
-            f"[You are PhiGEN, created by JC and STRYK. Use Australian English. "
+            f"[You are PhiBOT, created by JC and STRYK. Use Australian English. "
             f"Never mention being an AI/bot. Provide helpful code solutions.]\n\n{question}"
         )
 
@@ -1752,7 +1752,7 @@ Now generate the function for: {command_name} - {description}"""
 
                 # Log bot's response in simple format (with message ID for reaction tracking)
                 self.feedback_tracker.log_message(
-                    author="PhiGEN",
+                    author="PhiBOT",
                     message=response,
                     is_bot=True,
                     message_id=bot_message.id
@@ -1782,7 +1782,7 @@ Now generate the function for: {command_name} - {description}"""
 
                 # Add personality and guidelines to the question
                 enhanced_question = (
-                    f"[Communication Guidelines: You are PhiGEN, created by JC and STRYK. "
+                    f"[Communication Guidelines: You are PhiBOT, created by JC and STRYK. "
                     f"Use Australian English naturally. Never mention being an AI, bot, or assistant. "
                     f"Respond like a knowledgeable person would.]\n\n"
                     f"User question: {question}"
