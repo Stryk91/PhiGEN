@@ -59,17 +59,32 @@ echo ============================================================
 echo.
 
 REM ============================================================
-REM STEP 2: Start Docker Services
+REM STEP 2: Check Running Services & Start Docker
 REM ============================================================
-echo [2/4] Starting Docker services...
-echo.
-echo This will start:
-echo   - Discord Multi-Model Bot
-echo   - Ollama (Phi 3.5, Mistral, Granite, BakLLaVA)
-echo   - AI REST API
+echo [2/4] Checking and starting Docker services...
 echo.
 
-docker-compose -f config\docker\docker-compose.yml --profile ai up -d
+REM Check what's already running
+echo Checking current Docker status...
+docker ps --filter "name=phigen" --format "{{.Names}}" > nul 2>&1
+if errorlevel 1 (
+    echo No PhiGEN services currently running
+) else (
+    echo Current running services:
+    docker ps --filter "name=phigen" --format "  - {{.Names}} ({{.Status}})"
+    echo.
+)
+
+echo.
+echo Starting services (skipping already running)...
+echo   - Discord Multi-Model Bot
+echo   - AI REST API
+echo   - AI Code Reviewer
+echo   - AI Log Analyzer
+echo.
+
+REM Use --env-file to load environment variables and --remove-orphans to clean up
+docker-compose -f config\docker\docker-compose.yml --env-file .env --profile ai up -d --remove-orphans 2>nul
 
 if errorlevel 1 (
     color 0C
@@ -81,26 +96,40 @@ if errorlevel 1 (
 )
 
 echo.
-echo [OK] Docker services started
+echo [OK] Docker services started (or already running)
 echo.
 echo Waiting for services to initialize...
-timeout /t 5 /nobreak >nul
+timeout /t 3 /nobreak >nul
 
 echo.
 echo ============================================================
 echo.
 
 REM ============================================================
-REM STEP 3: Start DC Bridge Watcher
+REM STEP 3: Start DC Bridge Watcher (if not running)
 REM ============================================================
-echo [3/4] Starting Discord to Claude Code bridge...
+echo [3/4] Checking Discord to Claude Code bridge...
 echo.
 
+REM Check if DC Bridge is already running
+tasklist /FI "IMAGENAME eq python.exe" 2>nul | findstr /I "python.exe" >nul
+if not errorlevel 1 (
+    REM Check if it's specifically our bridge script
+    wmic process where "name='python.exe'" get commandline 2>nul | findstr /I "watch_and_send_to_dc" >nul
+    if not errorlevel 1 (
+        echo [OK] DC Bridge already running
+        goto bridge_done
+    )
+)
+
+echo Starting DC Bridge watcher...
 REM Start the bridge in a new window
 start "PhiGEN DC Bridge" cmd /k ".\.venv\Scripts\python.exe scripts\utils\watch_and_send_to_dc.py"
 
 echo [OK] DC Bridge watcher started in new window
 echo      Keep that window open to process !send_to_dc commands
+
+:bridge_done
 
 echo.
 echo ============================================================
