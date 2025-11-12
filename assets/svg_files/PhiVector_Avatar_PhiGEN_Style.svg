@@ -1,0 +1,131 @@
+<svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark vignette backdrop -->
+    <radialGradient id="bgVig" cx="50%" cy="45%" r="70%">
+      <stop offset="0%"  stop-color="#0E1216"/>
+      <stop offset="100%" stop-color="#050a06"/>
+    </radialGradient>
+
+    <!-- Neon rim (cyan->green sweep) -->
+    <linearGradient id="neonRim" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(45)">
+      <stop offset="0%"   stop-color="#00E0FF"/>
+      <stop offset="50%"  stop-color="#39ff14"/>
+      <stop offset="100%" stop-color="#00E0FF"/>
+    </linearGradient>
+
+    <!-- Pure chrome gradient (your exact stops) -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="3%"   stop-color="#c0c0c0"/>
+      <stop offset="8%"   stop-color="#404040"/>
+      <stop offset="12%"  stop-color="#909090"/>
+      <stop offset="25%"  stop-color="#e8e8e8"/>
+      <stop offset="45%"  stop-color="#a0a0a0"/>
+      <stop offset="55%"  stop-color="#505050"/>
+      <stop offset="70%"  stop-color="#b0b0b0"/>
+      <stop offset="85%"  stop-color="#f0f0f0"/>
+      <stop offset="92%"  stop-color="#606060"/>
+      <stop offset="100%" stop-color="#303030"/>
+    </linearGradient>
+
+    <!-- Chrome stroke -->
+    <linearGradient id="chromeStroke" x1="0%" y1="0%" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#c8c8c8"/>
+      <stop offset="50%"  stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8b8b8"/>
+    </linearGradient>
+
+    <!-- Radial joint (needle bracket corner style) -->
+    <radialGradient id="joint" cx="50%" cy="50%" r="50%">
+      <stop offset="0"    stop-color="#e7edf5"/>
+      <stop offset="0.4"  stop-color="#aeb6c0"/>
+      <stop offset="0.75" stop-color="#323840"/>
+      <stop offset="1"    stop-color="#0a0c10"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Circuit texture pattern (your exact structure) -->
+    <pattern id="circuit" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#0a0a0a"/>
+      <line x1="0" y1="15" x2="35" y2="15" stroke="#39ff14" stroke-width="0.4" opacity="0.12"/>
+      <line x1="20" y1="30" x2="60" y2="30" stroke="#39ff14" stroke-width="0.4" opacity="0.12"/>
+      <line x1="18" y1="0" x2="18" y2="25" stroke="#39ff14" stroke-width="0.4" opacity="0.12"/>
+      <line x1="35" y1="12" x2="35" y2="60" stroke="#39ff14" stroke-width="0.4" opacity="0.12"/>
+      <circle cx="18" cy="15" r="0.8" fill="#39ff14" opacity="0.15"/>
+      <circle cx="35" cy="30" r="0.8" fill="#39ff14" opacity="0.15"/>
+      <rect x="33" y="13" width="2.5" height="2.5" fill="none" stroke="#39ff14" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- BG with circuit overlay -->
+  <circle cx="125" cy="125" r="120" fill="url(#bgVig)"/>
+  <circle cx="125" cy="125" r="118" fill="url(#circuit)" opacity="0.25"/>
+
+  <!-- Neon rim glow -->
+  <g filter="url(#glow)">
+    <circle cx="125" cy="125" r="117" fill="none" stroke="url(#neonRim)" stroke-width="2.5" opacity="0.6"/>
+  </g>
+
+  <!-- Main ring (chrome, fat stroke) -->
+  <circle cx="125" cy="125" r="68" fill="none" stroke="url(#chrome)" stroke-width="18"/>
+  <circle cx="125" cy="125" r="68" fill="none" stroke="url(#chromeStroke)" stroke-width="1" opacity="0.8"/>
+
+  <!-- Massive V (chrome) -->
+  <path d="M85 68 L125 192 L165 68" fill="none" stroke="url(#chrome)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 68 L125 192 L165 68" fill="none" stroke="url(#chromeStroke)" stroke-width="1" opacity="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Φ overlay (compact, chrome) -->
+  <circle cx="125" cy="108" r="24" fill="none" stroke="url(#chrome)" stroke-width="9"/>
+  <line x1="125" y1="94" x2="125" y2="122" stroke="url(#chrome)" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Ring teeth (cardinal + diagonal, your neon green) -->
+  <g stroke="#39ff14" stroke-width="5" stroke-linecap="round" opacity="0.85" filter="url(#glow)">
+    <line x1="125" y1="41"  x2="125" y2="53"/>
+    <line x1="209" y1="125" x2="197" y2="125"/>
+    <line x1="125" y1="209" x2="125" y2="197"/>
+    <line x1="41"  y1="125" x2="53"  y2="125"/>
+    <line x1="167" y1="83" x2="159" y2="91"/>
+    <line x1="167" y1="167" x2="159" y2="159"/>
+    <line x1="83"  y1="167" x2="91"  y2="159"/>
+    <line x1="83"  y1="83"  x2="91"  y2="91"/>
+  </g>
+
+  <!-- Crown chevron -->
+  <g filter="url(#glow)">
+    <path d="M98 50 L125 36 L152 50" fill="none" stroke="#39ff14" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Needle-bracket-style rivets (mimic your corner joints) -->
+  <g fill="url(#joint)">
+    <circle cx="125" cy="50" r="4"/>
+    <circle cx="200" cy="125" r="4"/>
+    <circle cx="125" cy="200" r="4"/>
+    <circle cx="50" cy="125" r="4"/>
+  </g>
+  <g fill="#39ff14" opacity="0.8">
+    <circle cx="125" cy="50" r="1.2"/>
+    <circle cx="200" cy="125" r="1.2"/>
+    <circle cx="125" cy="200" r="1.2"/>
+    <circle cx="50" cy="125" r="1.2"/>
+  </g>
+
+  <!-- Vent grilles (mechanical detail) -->
+  <g stroke="#39ff14" stroke-width="0.8" opacity="0.2">
+    <line x1="115" y1="205" x2="135" y2="205"/>
+    <line x1="115" y1="208" x2="135" y2="208"/>
+  </g>
+
+  <!-- Micro circuit trace (easter egg) -->
+  <g stroke="#39ff14" stroke-width="0.6" opacity="0.15">
+    <path d="M55 130 L60 130 L62 132"/>
+    <circle cx="62" cy="132" r="0.5" fill="#39ff14" opacity="0.2"/>
+  </g>
+</svg>

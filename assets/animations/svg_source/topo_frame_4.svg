@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0D0D0D"/>
+  
+  <defs>
+    <pattern id="grid4" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#00DD00" stroke-width="0.7" opacity="0.5"/>
+    </pattern>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#00FF00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00FF00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid4)"/>
+  
+  <!-- Close-up view with more detail -->
+  <ellipse cx="400" cy="250" rx="300" ry="230" fill="none" stroke="#00EE00" stroke-width="2" opacity="0.8"/>
+  <ellipse cx="400" cy="250" rx="270" ry="205" fill="none" stroke="#00EE00" stroke-width="2" opacity="0.85"/>
+  <ellipse cx="400" cy="250" rx="240" ry="180" fill="none" stroke="#00DD00" stroke-width="2" opacity="0.9"/>
+  <ellipse cx="400" cy="250" rx="210" ry="155" fill="none" stroke="#00DD00" stroke-width="2" opacity="0.9"/>
+  <ellipse cx="400" cy="250" rx="180" ry="130" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="0.95"/>
+  <ellipse cx="400" cy="250" rx="150" ry="105" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <ellipse cx="400" cy="250" rx="120" ry="80" fill="none" stroke="#00FF00" stroke-width="3" opacity="1"/>
+  <ellipse cx="400" cy="250" rx="90" ry="60" fill="none" stroke="#00FF00" stroke-width="3" opacity="1"/>
+  
+  <!-- Glow effect at peak -->
+  <ellipse cx="400" cy="250" rx="60" ry="40" fill="url(#glow)" stroke="#00FF00" stroke-width="3" opacity="1"/>
+  
+  <!-- 3D wireframe perspective grid -->
+  <path d="M 100,500 Q 400,300 700,500" fill="none" stroke="#00EE00" stroke-width="1.2" opacity="0.7"/>
+  <path d="M 100,470 Q 400,280 700,470" fill="none" stroke="#00EE00" stroke-width="1.2" opacity="0.7"/>
+  <path d="M 100,440 Q 400,260 700,440" fill="none" stroke="#00EE00" stroke-width="1.2" opacity="0.7"/>
+  <path d="M 100,410 Q 400,240 700,410" fill="none" stroke="#00EE00" stroke-width="1.2" opacity="0.7"/>
+  
+  <!-- Vertical grid lines -->
+  <line x1="250" y1="250" x2="250" y2="500" stroke="#00DD00" stroke-width="0.8" opacity="0.5"/>
+  <line x1="350" y1="230" x2="350" y2="480" stroke="#00DD00" stroke-width="0.8" opacity="0.5"/>
+  <line x1="450" y1="230" x2="450" y2="480" stroke="#00DD00" stroke-width="0.8" opacity="0.5"/>
+  <line x1="550" y1="250" x2="550" y2="500" stroke="#00DD00" stroke-width="0.8" opacity="0.5"/>
+  
+  <text x="50" y="30" font-family="White Rabbit, monospace" font-size="14" fill="#00EE00" opacity="0.9">
+    LAT: -37.8136° S
+  </text>
+  <text x="50" y="50" font-family="White Rabbit, monospace" font-size="14" fill="#00EE00" opacity="0.9">
+    LON: 144.9631° E
+  </text>
+  
+  <text x="600" y="30" font-family="White Rabbit, monospace" font-size="12" fill="#00FF00" opacity="1">
+    TARGET LOCKED
+  </text>
+  <text x="600" y="50" font-family="White Rabbit, monospace" font-size="12" fill="#00DD00" opacity="0.9">
+    RESOLUTION: HIGH
+  </text>
+  
+  <text x="50" y="580" font-family="White Rabbit, monospace" font-size="12" fill="#00EE00" opacity="1">
+    ZOOM: 3.0x | ELEV: 300-450m
+  </text>
+  
+  <!-- Enhanced crosshair -->
+  <circle cx="400" cy="270" r="40" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="400" cy="270" r="6" fill="#00FF00" opacity="1"/>
+  <line x1="400" y1="240" x2="400" y2="210" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <line x1="400" y1="300" x2="400" y2="330" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <line x1="360" y1="270" x2="330" y2="270" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <line x1="440" y1="270" x2="470" y2="270" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  
+  <!-- Lock brackets -->
+  <path d="M 280,150 L 260,150 L 260,170" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <path d="M 520,150 L 540,150 L 540,170" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <path d="M 280,390 L 260,390 L 260,370" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <path d="M 520,390 L 540,390 L 540,370" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+</svg>

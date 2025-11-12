@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0D0D0D"/>
+  
+  <defs>
+    <pattern id="grid6" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00FF00" stroke-width="0.8" opacity="0.6"/>
+    </pattern>
+    <radialGradient id="glow3">
+      <stop offset="0%" stop-color="#00FF00" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00FF00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid6)"/>
+  
+  <!-- Maximum detail with all contours visible -->
+  <ellipse cx="400" cy="240" rx="340" ry="260" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="0.9"/>
+  <ellipse cx="400" cy="240" rx="310" ry="235" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="0.9"/>
+  <ellipse cx="400" cy="240" rx="280" ry="210" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="0.95"/>
+  <ellipse cx="400" cy="240" rx="250" ry="185" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="0.95"/>
+  <ellipse cx="400" cy="240" rx="220" ry="160" fill="none" stroke="#00FF00" stroke-width="3" opacity="1"/>
+  <ellipse cx="400" cy="240" rx="190" ry="135" fill="none" stroke="#00FF00" stroke-width="3" opacity="1"/>
+  <ellipse cx="400" cy="240" rx="160" ry="110" fill="none" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <ellipse cx="400" cy="240" rx="130" ry="85" fill="none" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <ellipse cx="400" cy="240" rx="100" ry="65" fill="none" stroke="#00FF00" stroke-width="4" opacity="1"/>
+  
+  <ellipse cx="400" cy="240" rx="70" ry="45" fill="url(#glow3)" stroke="#00FF00" stroke-width="4" opacity="1"/>
+  <circle cx="400" cy="240" r="25" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  <circle cx="400" cy="240" r="15" fill="#00FF00" opacity="0.3"/>
+  
+  <!-- Full wireframe grid -->
+  <path d="M 50,550 Q 400,250 750,550" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <path d="M 50,520 Q 400,235 750,520" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <path d="M 50,490 Q 400,220 750,490" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <path d="M 50,460 Q 400,205 750,460" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <path d="M 50,430 Q 400,190 750,430" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  
+  <line x1="200" y1="240" x2="200" y2="550" stroke="#00FF00" stroke-width="1" opacity="0.7"/>
+  <line x1="300" y1="220" x2="300" y2="520" stroke="#00FF00" stroke-width="1" opacity="0.7"/>
+  <line x1="400" y1="200" x2="400" y2="500" stroke="#00FF00" stroke-width="1.5" opacity="0.8"/>
+  <line x1="500" y1="220" x2="500" y2="520" stroke="#00FF00" stroke-width="1" opacity="0.7"/>
+  <line x1="600" y1="240" x2="600" y2="550" stroke="#00FF00" stroke-width="1" opacity="0.7"/>
+  
+  <text x="50" y="30" font-family="White Rabbit, monospace" font-size="14" fill="#00FF00" opacity="1">
+    LAT: -37.8136° S
+  </text>
+  <text x="50" y="50" font-family="White Rabbit, monospace" font-size="14" fill="#00FF00" opacity="1">
+    LON: 144.9631° E
+  </text>
+  
+  <text x="550" y="30" font-family="White Rabbit, monospace" font-size="12" fill="#00FF00" opacity="1">
+    ACQUISITION COMPLETE
+  </text>
+  <text x="550" y="50" font-family="White Rabbit, monospace" font-size="12" fill="#00FF00" opacity="1">
+    TERRAIN DATA: 100%
+  </text>
+  
+  <text x="50" y="580" font-family="White Rabbit, monospace" font-size="12" fill="#00FF00" opacity="1">
+    ZOOM: 4.0x | ELEV: 350-420m | STATUS: CONFIRMED
+  </text>
+  
+  <!-- Ultimate targeting system -->
+  <circle cx="400" cy="260" r="50" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="0.9"/>
+  <circle cx="400" cy="260" r="70" fill="none" stroke="#00FF00" stroke-width="2" opacity="0.7"/>
+  <circle cx="400" cy="260" r="90" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="400" cy="260" r="10" fill="#00FF00" opacity="1"/>
+  
+  <line x1="400" y1="215" x2="400" y2="185" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <line x1="400" y1="305" x2="400" y2="335" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <line x1="345" y1="260" x2="315" y2="260" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <line x1="455" y1="260" x2="485" y2="260" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  
+  <!-- Locked brackets - full brightness -->
+  <path d="M 250,130 L 220,130 L 220,160" fill="none" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <path d="M 550,130 L 580,130 L 580,160" fill="none" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <path d="M 250,390 L 220,390 L 220,360" fill="none" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  <path d="M 550,390 L 580,390 L 580,360" fill="none" stroke="#00FF00" stroke-width="3.5" opacity="1"/>
+  
+  <!-- Data overlay -->
+  <rect x="620" y="100" width="150" height="8" fill="#00FF00" opacity="1"/>
+  <text x="625" y="95" font-family="White Rabbit, monospace" font-size="10" fill="#00FF00">SIGNAL: 100%</text>
+  
+  <rect x="620" y="130" width="150" height="8" fill="#00FF00" opacity="1"/>
+  <text x="625" y="125" font-family="White Rabbit, monospace" font-size="10" fill="#00FF00">MAPPING: 100%</text>
+  
+  <rect x="620" y="160" width="150" height="8" fill="#00FF00" opacity="1"/>
+  <text x="625" y="155" font-family="White Rabbit, monospace" font-size="10" fill="#00FF00">LOCK: STABLE</text>
+  
+  <!-- CONFIRMED label -->
+  <text x="330" y="480" font-family="White Rabbit, monospace" font-size="18" fill="#00FF00" opacity="1">
+    ✓ CONFIRMED
+  </text>
+</svg>

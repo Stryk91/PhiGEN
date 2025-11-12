@@ -1,0 +1,156 @@
+<svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark vignette -->
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%"  stop-color="#0E1216"/>
+      <stop offset="100%" stop-color="#050a06"/>
+    </radialGradient>
+
+    <!-- PhiGEN chrome gradient -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="3%"   stop-color="#c0c0c0"/>
+      <stop offset="8%"   stop-color="#404040"/>
+      <stop offset="12%"  stop-color="#909090"/>
+      <stop offset="25%"  stop-color="#e8e8e8"/>
+      <stop offset="45%"  stop-color="#a0a0a0"/>
+      <stop offset="55%"  stop-color="#505050"/>
+      <stop offset="70%"  stop-color="#b0b0b0"/>
+      <stop offset="85%"  stop-color="#f0f0f0"/>
+      <stop offset="92%"  stop-color="#606060"/>
+      <stop offset="100%" stop-color="#303030"/>
+    </linearGradient>
+
+    <!-- Chrome edge stroke -->
+    <linearGradient id="chromeEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#c8c8c8"/>
+      <stop offset="50%"  stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8b8b8"/>
+    </linearGradient>
+
+    <!-- Neon rim (cyan→green) -->
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(35)">
+      <stop offset="0%"   stop-color="#00E0FF"/>
+      <stop offset="50%"  stop-color="#39ff14"/>
+      <stop offset="100%" stop-color="#00E0FF"/>
+    </linearGradient>
+
+    <!-- Blade metal -->
+    <linearGradient id="bladeMetal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#D8DEE4"/>
+      <stop offset="30%"  stop-color="#707880"/>
+      <stop offset="60%"  stop-color="#B6BDC4"/>
+      <stop offset="100%" stop-color="#60676E"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Circuit pattern (subtle) -->
+    <pattern id="circuit" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="none"/>
+      <line x1="0"  y1="16" x2="36" y2="16" stroke="#39ff14" stroke-width="0.45" opacity="0.10"/>
+      <line x1="18" y1="30" x2="60" y2="30" stroke="#39ff14" stroke-width="0.45" opacity="0.10"/>
+      <line x1="14" y1="0"  x2="14" y2="22" stroke="#39ff14" stroke-width="0.45" opacity="0.10"/>
+      <line x1="36" y1="10" x2="36" y2="60" stroke="#39ff14" stroke-width="0.45" opacity="0.10"/>
+      <circle cx="14" cy="16" r="0.8" fill="#39ff14" opacity="0.12"/>
+      <circle cx="36" cy="30" r="0.8" fill="#39ff14" opacity="0.12"/>
+    </pattern>
+
+    <!-- Mask for highlight sweep on strokes -->
+    <mask id="ringMask">
+      <rect width="250" height="250" fill="black"/>
+      <circle cx="125" cy="125" r="70" fill="none" stroke="white" stroke-width="18"/>
+    </mask>
+    <mask id="vMask">
+      <rect width="250" height="250" fill="black"/>
+      <path d="M85 66 L125 194 L165 66" fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(20)">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0)"/>
+      <stop offset="50%"  stop-color="rgba(255,255,255,0.5)"/>
+      <stop offset="60%"  stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="125" cy="125" r="120" fill="url(#bg)"/>
+  <circle cx="125" cy="125" r="118" fill="url(#circuit)" opacity="0.22"/>
+
+  <!-- Neon rim -->
+  <g filter="url(#glow)">
+    <circle cx="125" cy="125" r="117" fill="none" stroke="url(#neon)" stroke-width="3" opacity="0.55"/>
+  </g>
+
+  <!-- Main ring (chrome) -->
+  <circle cx="125" cy="125" r="70" fill="none" stroke="url(#chrome)" stroke-width="18"/>
+  <circle cx="125" cy="125" r="70" fill="none" stroke="url(#chromeEdge)" stroke-width="1" opacity="0.85"/>
+  <g mask="url(#ringMask)" opacity="0.9">
+    <rect x="-30" y="0" width="310" height="250" fill="url(#sweep)"/>
+  </g>
+
+  <!-- Vector V (chrome) -->
+  <path d="M85 66 L125 194 L165 66" fill="none" stroke="url(#chrome)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 66 L125 194 L165 66" fill="none" stroke="url(#chromeEdge)" stroke-width="1" opacity="0.85" stroke-linecap="round" stroke-linejoin="round"/>
+  <g mask="url(#vMask)" opacity="0.85">
+    <rect x="-30" y="0" width="310" height="250" fill="url(#sweep)"/>
+  </g>
+
+  <!-- Φ overlay (compact) -->
+  <circle cx="125" cy="108" r="24" fill="none" stroke="url(#chrome)" stroke-width="9"/>
+  <line x1="125" y1="94" x2="125" y2="122" stroke="url(#chrome)" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Serrated blade (diagonal) -->
+  <!-- Path runs upper-right to lower-left; serrations on lower edge -->
+  <g transform="rotate(-28 125 125)">
+    <!-- Blade spine -->
+    <path d="M165 65 L85 185" stroke="url(#bladeMetal)" stroke-width="10" stroke-linecap="round"/>
+    <!-- Blade body with serrations -->
+    <path d="M170 65
+             C160 78, 140 105, 120 130
+             C115 136, 110 143, 105 150
+             L100 148
+             L104 141
+             L95 139
+             L100 132
+             L91 130
+             L96 123
+             L88 121
+             L93 114
+             L85 112
+             L90 105
+             L83 103
+             L88 96
+             L82 94
+             L170 65 Z"
+          fill="url(#bladeMetal)" opacity="0.9"/>
+    <!-- Neon edge (like a honed line) -->
+    <path d="M168 66 L86 184" stroke="#39ff14" stroke-opacity="0.85" stroke-width="2" filter="url(#glow)"/>
+  </g>
+
+  <!-- Crown chevron -->
+  <g filter="url(#glow)">
+    <path d="M98 48 L125 34 L152 48" fill="none" stroke="#39ff14" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Teeth ticks (menace) -->
+  <g stroke="#39ff14" stroke-width="5" stroke-linecap="round" opacity="0.85" filter="url(#glow)">
+    <line x1="125" y1="41"  x2="125" y2="53"/>
+    <line x1="209" y1="125" x2="197" y2="125"/>
+    <line x1="125" y1="209" x2="125" y2="197"/>
+    <line x1="41"  y1="125" x2="53"  y2="125"/>
+  </g>
+
+  <!-- Micro mechanical detail -->
+  <g stroke="#39ff14" stroke-width="0.8" opacity="0.22">
+    <line x1="114" y1="206" x2="136" y2="206"/>
+    <line x1="114" y1="209" x2="136" y2="209"/>
+  </g>
+</svg>

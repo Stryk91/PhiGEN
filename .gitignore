@@ -38,6 +38,7 @@ env/
 # IDEs
 .idea/
 .vscode/
+.run/
 *.swp
 *.swo
 *~
@@ -113,3 +114,90 @@ RESOURCES FROM OUTSIDE PROJECT(NOT PART OF CODEBASE YET)/
 
 # Test files
 !/test.txt
+
+# Root-level pollution prevention
+# Session logs and temporary files in root
+/*-*-*.txt
+/*.csv
+/driver_inventory.json
+/system_inventory.json
+/services_running.csv
+
+# System tools (should be in archive/)
+/SystemTools/
+/*_MANAGER_README.md
+/*_TOOLS_README.md
+
+# ============================================
+# PXE Server - Third-party downloads
+# ============================================
+# Large ISO files (can be re-downloaded)
+pxe_server/isos/
+*.iso
+
+# SYSLINUX package and binaries (third-party)
+pxe_server/syslinux/
+pxe_server/syslinux-*.zip
+
+# PXE server executables (downloadable)
+pxe_server/tftpd64/
+pxe_server/winnfsd/
+
+# PXE extracted/built files
+pxe_server/tftp/
+pxe_server/http/
+
+# ============================================
+# Binary and compiled files
+# ============================================
+*.bin
+*.c32
+*.exe
+*.com
+*.dll
+
+# ============================================
+# Archive directory (runtime/historical data)
+# ============================================
+# System snapshots - runtime data
+archive/system-snapshots/
+archive/logs/
+
+# Archived system tools
+archive/system-tools/
+
+# Keep archive structure but not contents
+!archive/.gitkeep
+!archive/README.md
+
+# ============================================
+# Generated documentation and assets
+# ============================================
+# PDFs (can be regenerated)
+*.pdf
+
+# Generated/rendered assets
+assets/textures/rendered/
+
+# Large animations
+assets/animations/*.gif
+assets/animations/*_hq.*
+
+# High-resolution exports
+*_2x.png
+*_4x.png
+
+# Keep source SVGs
+!assets/**/*.svg
+!assets/textures/*.svg
+
+# ============================================
+# Claude/AI tool settings
+# ============================================
+# Local settings (user-specific)
+.claude/settings.local.json
+.claude/**/*.local.json
+
+# Keep shared Claude commands and docs
+!.claude/commands/
+!.claude/*.md

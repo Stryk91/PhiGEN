@@ -1,0 +1,21 @@
+<svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill:#0B0D10; }
+      .pri { stroke:#EAEFF2; fill:none; }
+      .acc { stroke:#39ff14; fill:none; }
+    </style>
+  </defs>
+  <circle cx="125" cy="125" r="120" class="bg"/>
+  <circle cx="125" cy="125" r="68" class="pri" stroke-width="18"/>
+  <path d="M85 68 L125 192 L165 68" class="pri" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="125" cy="108" r="24" class="pri" stroke-width="9"/>
+  <line x1="125" y1="94" x2="125" y2="122" class="pri" stroke-width="8" stroke-linecap="round"/>
+  <g class="acc" stroke-width="5" stroke-linecap="round" opacity="0.9">
+    <line x1="125" y1="41"  x2="125" y2="53"/>
+    <line x1="209" y1="125" x2="197" y2="125"/>
+    <line x1="125" y1="209" x2="125" y2="197"/>
+    <line x1="41"  y1="125" x2="53"  y2="125"/>
+  </g>
+  <path d="M98 50 L125 36 L152 50" class="acc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

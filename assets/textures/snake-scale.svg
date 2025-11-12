@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="28" viewBox="0 0 48 28">
+<defs>
+<radialGradient id="grad-scale" cx="50%" cy="30%" r="70%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+<stop offset="0.35" stop-color="#9aa0a6" stop-opacity="0.22"/>
+<stop offset="0.7" stop-color="#2a2d30" stop-opacity="0.28"/>
+<stop offset="1" stop-color="#000000" stop-opacity="0.4"/>
+</radialGradient>
+</defs>
+<rect width="48" height="28" fill="transparent"/>
+<path d="M24,2 C34,2 44,8 48,14 C44,20 34,26 24,26 C14,26 4,20 0,14 C4,8 14,2 24,2 Z" fill="url(#grad-scale)"/>
+<path d="M0,14 C4,8 14,2 24,2 C34,2 44,8 48,14" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="0.8"/>
+<path d="M0,14 C4,20 14,26 24,26 C34,26 44,20 48,14" fill="none" stroke="#000000" stroke-opacity="0.3" stroke-width="0.8"/>
+<g transform="translate(24,14)">
+<path d="M24,2 C34,2 44,8 48,14 C44,20 34,26 24,26 C14,26 4,20 0,14 C4,8 14,2 24,2 Z" fill="url(#grad-scale)"/>
+<path d="M0,14 C4,8 14,2 24,2 C34,2 44,8 48,14" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="0.8"/>
+<path d="M0,14 C4,20 14,26 24,26 C34,26 44,20 48,14" fill="none" stroke="#000000" stroke-opacity="0.3" stroke-width="0.8"/>
+</g>
+</svg>

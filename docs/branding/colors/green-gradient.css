@@ -1,0 +1,58 @@
+/**
+ * PhiVector Green Gradient
+ * 25-shade gradient from neon green to black
+ * Primary brand color palette
+ */
+
+:root {
+  /* Neon Range (100-300) - Bright accents */
+  --phivector-green-100: #00FF2A;  /* Green - Primary neon */
+  --phivector-green-200: #00F428;  /* Erin - Bright success */
+  --phivector-green-300: #00EA27;  /* SGBUS green - Headers */
+
+  /* Bright Range (400-600) - Primary UI */
+  --phivector-green-400: #00DF25;  /* SGBUS green 2 - Borders */
+  --phivector-green-500: #00D523;  /* Lime green - Default */
+  --phivector-green-600: #00CA21;  /* Lime green 2 - Links */
+
+  /* Mid Range (700-900) - Secondary UI */
+  --phivector-green-700: #00BF20;  /* Dark pastel green - Hover */
+  --phivector-green-800: #00B51E;  /* Dark pastel green 2 - Code */
+  --phivector-green-900: #00AA1C;  /* Dark pastel green 3 - Badges */
+
+  /* Muted Range (1000-1400) - Tertiary UI */
+  --phivector-green-1000: #009F1A; /* Pigment green - Icons */
+  --phivector-green-1100: #009519; /* Forest green - Dividers */
+  --phivector-green-1200: #008A17; /* India green - Disabled */
+  --phivector-green-1300: #008015; /* Office green - Tertiary */
+  --phivector-green-1400: #007513; /* Office green 2 - BG accent */
+
+  /* Dark Range (1500-1900) - Backgrounds */
+  --phivector-green-1500: #006A12; /* Office green 3 - Borders */
+  --phivector-green-1600: #006010; /* Dartmouth green - Text */
+  --phivector-green-1700: #00550E; /* Cal Poly green - BG tint */
+  --phivector-green-1800: #004A0C; /* Pakistan green - Very dark */
+  --phivector-green-1900: #00400B; /* Pakistan green 2 - Shadow */
+
+  /* Near-Black Range (2000-2500) - Base */
+  --phivector-green-2000: #003509; /* Pakistan green 3 - Near-black */
+  --phivector-green-2100: #002B07; /* Dark green - Terminal BG */
+  --phivector-green-2200: #002005; /* Dark green 2 - Deep shadow */
+  --phivector-green-2300: #001504; /* Night - Almost black */
+  --phivector-green-2400: #000B02; /* Black - Near-black base */
+  --phivector-green-2500: #000000; /* Pure black */
+}
+
+/* Semantic aliases for common use cases */
+:root {
+  --phivector-primary: var(--phivector-green-500);
+  --phivector-accent: var(--phivector-green-100);
+  --phivector-success: var(--phivector-green-200);
+  --phivector-link: var(--phivector-green-600);
+  --phivector-hover: var(--phivector-green-700);
+  --phivector-border: var(--phivector-green-1500);
+  --phivector-bg-primary: var(--phivector-green-2500);
+  --phivector-bg-secondary: var(--phivector-green-2100);
+  --phivector-text-primary: var(--phivector-green-300);
+  --phivector-text-muted: var(--phivector-green-1600);
+}

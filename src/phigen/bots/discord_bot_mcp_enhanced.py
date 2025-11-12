@@ -258,7 +258,7 @@ async def ping(ctx):
     """Test bot responsiveness"""
     await ctx.send(f"Pong! Latency: {round(bot.latency * 1000)}ms")
 
-@bot.command(name='help')
+@bot.command(name='commands')
 async def help_command(ctx):
     """Show available commands"""
     help_text = """

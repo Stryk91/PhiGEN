@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0D0D0D"/>
+  
+  <defs>
+    <pattern id="grid3" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00AA00" stroke-width="0.6" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid3)"/>
+  
+  <!-- More detailed contours -->
+  <ellipse cx="400" cy="260" rx="260" ry="200" fill="none" stroke="#00EE00" stroke-width="1.8" opacity="0.8"/>
+  <ellipse cx="400" cy="260" rx="230" ry="175" fill="none" stroke="#00EE00" stroke-width="1.8" opacity="0.8"/>
+  <ellipse cx="400" cy="260" rx="200" ry="150" fill="none" stroke="#00DD00" stroke-width="1.8" opacity="0.9"/>
+  <ellipse cx="400" cy="260" rx="170" ry="125" fill="none" stroke="#00DD00" stroke-width="1.8" opacity="0.9"/>
+  <ellipse cx="400" cy="260" rx="140" ry="100" fill="none" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  <ellipse cx="400" cy="260" rx="110" ry="75" fill="none" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  <ellipse cx="400" cy="260" rx="80" ry="55" fill="none" stroke="#00FF00" stroke-width="2.5" opacity="1"/>
+  
+  <!-- Wireframe grid overlay for 3D effect -->
+  <path d="M 150,450 Q 400,350 650,450" fill="none" stroke="#00DD00" stroke-width="1" opacity="0.6"/>
+  <path d="M 150,420 Q 400,330 650,420" fill="none" stroke="#00DD00" stroke-width="1" opacity="0.6"/>
+  <path d="M 150,390 Q 400,310 650,390" fill="none" stroke="#00DD00" stroke-width="1" opacity="0.6"/>
+  
+  <text x="50" y="30" font-family="White Rabbit, monospace" font-size="14" fill="#00EE00" opacity="0.9">
+    LAT: -37.8136° S
+  </text>
+  <text x="50" y="50" font-family="White Rabbit, monospace" font-size="14" fill="#00EE00" opacity="0.9">
+    LON: 144.9631° E
+  </text>
+  
+  <text x="620" y="30" font-family="White Rabbit, monospace" font-size="12" fill="#00FF00" opacity="1">
+    ANALYZING...
+  </text>
+  <text x="620" y="50" font-family="White Rabbit, monospace" font-size="12" fill="#00AA00" opacity="0.8">
+    TERRAIN MAPPED
+  </text>
+  
+  <text x="50" y="580" font-family="White Rabbit, monospace" font-size="12" fill="#00DD00" opacity="0.9">
+    ZOOM: 2.0x | ELEV: 200-550m
+  </text>
+  
+  <circle cx="400" cy="280" r="5" fill="#00FF00" opacity="1"/>
+  <line x1="400" y1="260" x2="400" y2="230" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  <line x1="400" y1="300" x2="400" y2="330" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  <line x1="370" y1="280" x2="340" y2="280" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  <line x1="430" y1="280" x2="460" y2="280" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  
+  <!-- Corner brackets for lock-on effect -->
+  <path d="M 320,180 L 300,180 L 300,200" fill="none" stroke="#00FF00" stroke-width="2" opacity="0.8"/>
+  <path d="M 480,180 L 500,180 L 500,200" fill="none" stroke="#00FF00" stroke-width="2" opacity="0.8"/>
+  <path d="M 320,380 L 300,380 L 300,360" fill="none" stroke="#00FF00" stroke-width="2" opacity="0.8"/>
+  <path d="M 480,380 L 500,380 L 500,360" fill="none" stroke="#00FF00" stroke-width="2" opacity="0.8"/>
+</svg>

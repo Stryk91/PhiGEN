@@ -1,0 +1,88 @@
+<!-- textures-sprite.svg (embed once, e.g., in <body>) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;left:-9999px;top:-9999px;">
+  <defs>
+    <!-- Shared chrome highlight gradient -->
+    <linearGradient id="grad-chrome" x1="0" y1="0" x2="128" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="0.06" stop-color="#c9cdd1" stop-opacity="0.62"/>
+      <stop offset="0.23" stop-color="#8a9196" stop-opacity="0.42"/>
+      <stop offset="0.50" stop-color="#151719" stop-opacity="0.55"/>
+      <stop offset="0.77" stop-color="#8a9196" stop-opacity="0.42"/>
+      <stop offset="0.94" stop-color="#c9cdd1" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Subtle noise (optional) -->
+    <filter id="noise-01" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" />
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.02"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- 1) Carbon Fibre Weave (twill-like, micro) -->
+    <pattern id="tex-carbon-fibre" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="transparent"/>
+      <g transform="rotate(45 8 8)" opacity="0.55">
+        <rect x="-8" y="6.5" width="32" height="1.1" fill="#000"/>
+        <rect x="-8" y="9.5" width="32" height="1.1" fill="#000" opacity="0.6"/>
+        <rect x="-8" y="0.5" width="32" height="1.1" fill="#333" opacity="0.35"/>
+        <rect x="-8" y="3.5" width="32" height="1.1" fill="#000" opacity="0.4"/>
+      </g>
+      <!-- optional noise for realism -->
+      <rect x="0" y="0" width="16" height="16" fill="black" opacity="0" filter="url(#noise-01)"/>
+    </pattern>
+
+    <!-- 2) Chrome Vein (ultra-thin highlights) -->
+    <pattern id="tex-chrome-vein" width="128" height="128" patternUnits="userSpaceOnUse">
+      <rect width="128" height="128" fill="transparent"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M-5,96 C18,84 36,76 62,78 C88,80 102,95 132,90" stroke="url(#grad-chrome)" stroke-width="0.8" opacity="0.45"/>
+        <path d="M-10,40 C12,36 32,24 66,26 C98,28 110,50 138,48" stroke="url(#grad-chrome)" stroke-width="0.7" opacity="0.30"/>
+        <path d="M-6,10 C22,22 54,16 78,18 C108,20 120,6 136,8" stroke="url(#grad-chrome)" stroke-width="0.6" opacity="0.18"/>
+        <path d="M-8,70 C8,62 26,56 54,58 C84,60 100,74 134,72" stroke="url(#grad-chrome)" stroke-width="0.7" opacity="0.22"/>
+      </g>
+    </pattern>
+
+    <!-- 3) Snake Scale (micro, metallic) -->
+    <radialGradient id="grad-scale" cx="50%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="0.35" stop-color="#9aa0a6" stop-opacity="0.22"/>
+      <stop offset="0.7" stop-color="#2a2d30" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.4"/>
+    </radialGradient>
+    <pattern id="tex-snake-scale" width="48" height="28" patternUnits="userSpaceOnUse">
+      <rect width="48" height="28" fill="transparent"/>
+      <!-- scale 1 -->
+      <path d="M24,2 C34,2 44,8 48,14 C44,20 34,26 24,26 C14,26 4,20 0,14 C4,8 14,2 24,2 Z" fill="url(#grad-scale)" opacity="0.25"/>
+      <path d="M0,14 C4,8 14,2 24,2 C34,2 44,8 48,14" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+      <path d="M0,14 C4,20 14,26 24,26 C34,26 44,20 48,14" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1"/>
+      <!-- scale 2 (shifted) -->
+      <g transform="translate(24,14)">
+        <path d="M24,2 C34,2 44,8 48,14 C44,20 34,26 24,26 C14,26 4,20 0,14 C4,8 14,2 24,2 Z" fill="url(#grad-scale)" opacity="0.25"/>
+        <path d="M0,14 C4,8 14,2 24,2 C34,2 44,8 48,14" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+        <path d="M0,14 C4,20 14,26 24,26 C34,26 44,20 48,14" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1"/>
+      </g>
+    </pattern>
+
+    <!-- 4) Graphene Hex Mesh (tile: width=24, height≈20.7846) -->
+    <pattern id="tex-graphene" width="24" height="20.7846" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#c0ffd6" stroke-opacity="0.22" stroke-width="0.8" stroke-linejoin="round">
+        <path d="M6,0 L18,0 L24,10.3923 L18,20.7846 L6,20.7846 L0,10.3923 Z"/>
+        <path d="M18,0 L24,10.3923"/>
+        <path d="M6,0 L0,10.3923"/>
+      </g>
+    </pattern>
+
+    <!-- 5) Ultra-fine Crosshatch Mesh -->
+    <pattern id="tex-mesh-ultra" width="8" height="8" patternUnits="userSpaceOnUse">
+      <g opacity="0.25">
+        <path d="M0,0 L8,8" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6" stroke-linecap="square"/>
+        <path d="M8,0 L0,8" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6" stroke-linecap="square"/>
+        <path d="M0,4 L8,4" stroke="#00ff00" stroke-opacity="0.06" stroke-width="0.5"/>
+        <path d="M4,0 L4,8" stroke="#00ff00" stroke-opacity="0.06" stroke-width="0.5"/>
+      </g>
+    </pattern>
+  </defs>
+</svg>

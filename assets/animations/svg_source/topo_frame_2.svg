@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0D0D0D"/>
+  
+  <defs>
+    <pattern id="grid2" width="35" height="35" patternUnits="userSpaceOnUse">
+      <path d="M 35 0 L 0 0 0 35" fill="none" stroke="#00AA00" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid2)"/>
+  
+  <!-- Zooming in - contours get larger -->
+  <ellipse cx="400" cy="270" rx="220" ry="170" fill="none" stroke="#00EE00" stroke-width="1.5" opacity="0.8"/>
+  <ellipse cx="400" cy="270" rx="190" ry="140" fill="none" stroke="#00EE00" stroke-width="1.5" opacity="0.8"/>
+  <ellipse cx="400" cy="270" rx="160" ry="110" fill="none" stroke="#00DD00" stroke-width="1.5" opacity="0.9"/>
+  <ellipse cx="400" cy="270" rx="130" ry="85" fill="none" stroke="#00DD00" stroke-width="1.5" opacity="0.9"/>
+  <ellipse cx="400" cy="270" rx="100" ry="65" fill="none" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  <ellipse cx="400" cy="270" rx="70" ry="45" fill="none" stroke="#00FF00" stroke-width="2" opacity="1"/>
+  
+  <ellipse cx="200" cy="430" rx="130" ry="90" fill="none" stroke="#00DD00" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="200" cy="430" rx="100" ry="70" fill="none" stroke="#00EE00" stroke-width="1.5" opacity="0.8"/>
+  <ellipse cx="200" cy="430" rx="70" ry="50" fill="none" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  
+  <ellipse cx="620" cy="320" rx="110" ry="80" fill="none" stroke="#00DD00" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="620" cy="320" rx="80" ry="60" fill="none" stroke="#00EE00" stroke-width="1.5" opacity="0.8"/>
+  
+  <!-- Scanning line effect -->
+  <line x1="0" y1="180" x2="800" y2="180" stroke="#00FF00" stroke-width="1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite"/>
+  </line>
+  
+  <text x="50" y="30" font-family="White Rabbit, monospace" font-size="14" fill="#00EE00" opacity="0.9">
+    LAT: -37.8136° S
+  </text>
+  <text x="50" y="50" font-family="White Rabbit, monospace" font-size="14" fill="#00EE00" opacity="0.9">
+    LON: 144.9631° E
+  </text>
+  
+  <text x="630" y="30" font-family="White Rabbit, monospace" font-size="12" fill="#00FF00" opacity="0.9">
+    ENHANCING...
+  </text>
+  <text x="630" y="50" font-family="White Rabbit, monospace" font-size="12" fill="#00AA00" opacity="0.8">
+    CENTRAL VICTORIA
+  </text>
+  
+  <text x="50" y="580" font-family="White Rabbit, monospace" font-size="12" fill="#00AA00" opacity="0.8">
+    ZOOM: 1.5x | ELEV: 100-650m
+  </text>
+  
+  <circle cx="400" cy="290" r="4" fill="#00FF00" opacity="0.9"/>
+  <line x1="400" y1="275" x2="400" y2="250" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <line x1="400" y1="305" x2="400" y2="330" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <line x1="380" y1="290" x2="355" y2="290" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+  <line x1="420" y1="290" x2="445" y2="290" stroke="#00FF00" stroke-width="1.5" opacity="0.9"/>
+</svg>

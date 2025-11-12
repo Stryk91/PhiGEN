@@ -1,0 +1,102 @@
+<svg width="1600" height="360" viewBox="0 0 1600 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark backdrop -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#0E1216"/>
+      <stop offset="100%" stop-color="#050a06"/>
+    </linearGradient>
+
+    <!-- Pure chrome (your exact stops) -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="3%"   stop-color="#c0c0c0"/>
+      <stop offset="8%"   stop-color="#404040"/>
+      <stop offset="12%"  stop-color="#909090"/>
+      <stop offset="25%"  stop-color="#e8e8e8"/>
+      <stop offset="45%"  stop-color="#a0a0a0"/>
+      <stop offset="55%"  stop-color="#505050"/>
+      <stop offset="70%"  stop-color="#b0b0b0"/>
+      <stop offset="85%"  stop-color="#f0f0f0"/>
+      <stop offset="92%"  stop-color="#606060"/>
+      <stop offset="100%" stop-color="#303030"/>
+    </linearGradient>
+
+    <!-- 45° shadow filter (your exact settings) -->
+    <filter id="shadow45" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset in="SourceAlpha" dx="35" dy="35" result="offset"/>
+      <feGaussianBlur in="offset" stdDeviation="17.5" result="blur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.7"/>
+      <feComposite in2="blur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Neon underline -->
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#00E0FF"/>
+      <stop offset="50%"  stop-color="#39ff14"/>
+      <stop offset="100%" stop-color="#00E0FF"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Circuit pattern -->
+    <pattern id="circuit" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="none"/>
+      <line x1="0" y1="15" x2="35" y2="15" stroke="#39ff14" stroke-width="0.4" opacity="0.08"/>
+      <line x1="20" y1="30" x2="60" y2="30" stroke="#39ff14" stroke-width="0.4" opacity="0.08"/>
+      <circle cx="18" cy="15" r="0.7" fill="#39ff14" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- BG -->
+  <rect x="0" y="0" width="1600" height="360" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="360" fill="url(#circuit)" opacity="0.15"/>
+
+  <!-- Depth layers (shadow steps) -->
+  <text x="210" y="243" font-size="190" font-weight="700" font-family="Impact, 'Arial Black', sans-serif" letter-spacing="12" fill="#000000" opacity="0.15">PHI</text>
+  <text x="207" y="240" font-size="190" font-weight="700" font-family="Impact, 'Arial Black', sans-serif" letter-spacing="12" fill="#000000" opacity="0.2">PHI</text>
+  <text x="204" y="237" font-size="190" font-weight="700" font-family="Impact, 'Arial Black', sans-serif" letter-spacing="12" fill="#000000" opacity="0.25">PHI</text>
+
+  <text x="920" y="243" font-size="190" font-weight="700" font-family="Impact, 'Arial Black', sans-serif" letter-spacing="12" fill="#000000" opacity="0.15">VECTOR</text>
+  <text x="917" y="240" font-size="190" font-weight="700" font-family="Impact, 'Arial Black', sans-serif" letter-spacing="12" fill="#000000" opacity="0.2">VECTOR</text>
+  <text x="914" y="237" font-size="190" font-weight="700" font-family="Impact, 'Arial Black', sans-serif" letter-spacing="12" fill="#000000" opacity="0.25">VECTOR</text>
+
+  <!-- Main text (chrome + shadow) -->
+  <text x="200" y="230" font-size="190" font-weight="700" font-family="Xolonium, 'Arial Black', sans-serif" letter-spacing="12" fill="url(#chrome)" stroke="#101010" stroke-width="4" filter="url(#shadow45)">PHI</text>
+  <text x="910" y="230" font-size="190" font-weight="700" font-family="Xolonium, 'Arial Black', sans-serif" letter-spacing="12" fill="url(#chrome)" stroke="#101010" stroke-width="4" filter="url(#shadow45)">VECTOR</text>
+
+  <!-- Arrow hyphen (tactical) -->
+  <g transform="translate(780,172)" filter="url(#glow)">
+    <path d="M0 0 L90 0" stroke="#39ff14" stroke-width="12" stroke-linecap="round"/>
+    <path d="M90 0 L70 -14 L70 14 Z" fill="#39ff14"/>
+  </g>
+
+  <!-- Neon underline -->
+  <g filter="url(#glow)">
+    <path d="M200 250 L1400 250" stroke="url(#neon)" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mechanical rivets (your style) -->
+  <g fill="#39ff14" opacity="0.6">
+    <circle cx="220" cy="155" r="2.5"/>
+    <circle cx="450" cy="210" r="2.5"/>
+    <circle cx="930" cy="155" r="2.5"/>
+    <circle cx="1350" cy="210" r="2.5"/>
+  </g>
+
+  <!-- Status pips -->
+  <g filter="url(#glow)">
+    <circle cx="1480" cy="90" r="6" fill="#39ff14"/>
+    <circle cx="1520" cy="90" r="4" fill="#00E0FF" opacity="0.8"/>
+  </g>
+</svg>

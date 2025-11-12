@@ -79,8 +79,9 @@ echo.
 
 echo ============================================================
 echo.
-echo To start system: START_PHIGEN_SYSTEM.bat
-echo To stop system:  STOP_PHIGEN_SYSTEM.bat
+echo To start system:      START_PHIGEN_SYSTEM.bat (in root folder)
+echo To stop system:       STOP_PHIGEN_SYSTEM.bat (in root folder)
+echo GUI Status Monitor:  scripts\windows\STATUS_MONITOR.bat
 echo.
 echo ============================================================
 echo.

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="grad-chrome" x1="0" y1="0" x2="128" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="0.06" stop-color="#c9cdd1" stop-opacity="0.62"/>
+      <stop offset="0.23" stop-color="#8a9196" stop-opacity="0.42"/>
+      <stop offset="0.50" stop-color="#151719" stop-opacity="0.55"/>
+      <stop offset="0.77" stop-color="#8a9196" stop-opacity="0.42"/>
+      <stop offset="0.94" stop-color="#c9cdd1" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.85"/>
+    </linearGradient>
+    <pattern id="tex-chrome-vein" width="128" height="128" patternUnits="userSpaceOnUse">
+      <rect width="128" height="128" fill="transparent"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M-5,96 C18,84 36,76 62,78 C88,80 102,95 132,90" stroke="url(#grad-chrome)" stroke-width="0.8" opacity="0.45"/>
+        <path d="M-10,40 C12,36 32,24 66,26 C98,28 110,50 138,48" stroke="url(#grad-chrome)" stroke-width="0.7" opacity="0.30"/>
+        <path d="M-6,10 C22,22 54,16 78,18 C108,20 120,6 136,8" stroke="url(#grad-chrome)" stroke-width="0.6" opacity="0.18"/>
+        <path d="M-8,70 C8,62 26,56 54,58 C84,60 100,74 134,72" stroke="url(#grad-chrome)" stroke-width="0.7" opacity="0.22"/>
+      </g>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="256" height="256" fill="#050505"/>
+  <!-- Pattern applied -->
+  <rect width="256" height="256" fill="url(#tex-chrome-vein)"/>
+</svg>

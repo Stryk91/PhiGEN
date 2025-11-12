@@ -1,0 +1,261 @@
+{
+  "name": "PhiVector Green Gradient",
+  "description": "25-shade gradient from neon green to black, primary brand color palette",
+  "shades": [
+    {
+      "name": "Green",
+      "hex": "00FF2A",
+      "rgb": [0, 255, 42],
+      "cmyk": [100, 0, 84, 0],
+      "hsb": [130, 100, 100],
+      "hsl": [130, 100, 50],
+      "lab": [88, -85, 78],
+      "usage": "Primary neon green - brightest accent, CTAs, highlights"
+    },
+    {
+      "name": "Erin",
+      "hex": "00F428",
+      "rgb": [0, 244, 40],
+      "cmyk": [100, 0, 84, 4],
+      "hsb": [130, 100, 96],
+      "hsl": [130, 100, 48],
+      "lab": [84, -82, 75],
+      "usage": "Bright success states, active indicators"
+    },
+    {
+      "name": "SGBUS green",
+      "hex": "00EA27",
+      "rgb": [0, 234, 39],
+      "cmyk": [100, 0, 83, 8],
+      "hsb": [130, 100, 92],
+      "hsl": [130, 100, 46],
+      "lab": [81, -80, 73],
+      "usage": "Headers, primary text on dark backgrounds"
+    },
+    {
+      "name": "SGBUS green 2",
+      "hex": "00DF25",
+      "rgb": [0, 223, 37],
+      "cmyk": [100, 0, 83, 13],
+      "hsb": [130, 100, 87],
+      "hsl": [130, 100, 44],
+      "lab": [78, -77, 70],
+      "usage": "Secondary accents, borders"
+    },
+    {
+      "name": "Lime green",
+      "hex": "00D523",
+      "rgb": [0, 213, 35],
+      "cmyk": [100, 0, 84, 16],
+      "hsb": [130, 100, 84],
+      "hsl": [130, 100, 42],
+      "lab": [75, -74, 67],
+      "usage": "Active states, progress indicators"
+    },
+    {
+      "name": "Lime green 2",
+      "hex": "00CA21",
+      "rgb": [0, 202, 33],
+      "cmyk": [100, 0, 84, 21],
+      "hsb": [130, 100, 79],
+      "hsl": [130, 100, 40],
+      "lab": [71, -71, 65],
+      "usage": "Interactive elements, links"
+    },
+    {
+      "name": "Dark pastel green",
+      "hex": "00BF20",
+      "rgb": [0, 191, 32],
+      "cmyk": [100, 0, 83, 25],
+      "hsb": [130, 100, 75],
+      "hsl": [130, 100, 37],
+      "lab": [68, -68, 62],
+      "usage": "Hover states, secondary buttons"
+    },
+    {
+      "name": "Dark pastel green 2",
+      "hex": "00B51E",
+      "rgb": [0, 181, 30],
+      "cmyk": [100, 0, 83, 29],
+      "hsb": [130, 100, 71],
+      "hsl": [130, 100, 35],
+      "lab": [64, -66, 59],
+      "usage": "Code syntax highlighting, tags"
+    },
+    {
+      "name": "Dark pastel green 3",
+      "hex": "00AA1C",
+      "rgb": [0, 170, 28],
+      "cmyk": [100, 0, 84, 33],
+      "hsb": [130, 100, 67],
+      "hsl": [130, 100, 33],
+      "lab": [61, -63, 56],
+      "usage": "Badges, labels"
+    },
+    {
+      "name": "Pigment green",
+      "hex": "009F1A",
+      "rgb": [0, 159, 26],
+      "cmyk": [100, 0, 84, 38],
+      "hsb": [130, 100, 62],
+      "hsl": [130, 100, 31],
+      "lab": [57, -60, 54],
+      "usage": "Icons, glyphs"
+    },
+    {
+      "name": "Forest green",
+      "hex": "009519",
+      "rgb": [0, 149, 25],
+      "cmyk": [100, 0, 83, 42],
+      "hsb": [130, 100, 58],
+      "hsl": [130, 100, 29],
+      "lab": [54, -57, 51],
+      "usage": "Sidebar accents, dividers"
+    },
+    {
+      "name": "India green",
+      "hex": "008A17",
+      "rgb": [0, 138, 23],
+      "cmyk": [100, 0, 83, 46],
+      "hsb": [130, 100, 54],
+      "hsl": [130, 100, 27],
+      "lab": [50, -54, 48],
+      "usage": "Muted states, disabled elements"
+    },
+    {
+      "name": "Office green",
+      "hex": "008015",
+      "rgb": [0, 128, 21],
+      "cmyk": [100, 0, 84, 50],
+      "hsb": [130, 100, 50],
+      "hsl": [130, 100, 25],
+      "lab": [46, -51, 45],
+      "usage": "Tertiary UI elements"
+    },
+    {
+      "name": "Office green 2",
+      "hex": "007513",
+      "rgb": [0, 117, 19],
+      "cmyk": [100, 0, 84, 54],
+      "hsb": [130, 100, 46],
+      "hsl": [130, 100, 23],
+      "lab": [42, -48, 42],
+      "usage": "Background accents"
+    },
+    {
+      "name": "Office green 3",
+      "hex": "006A12",
+      "rgb": [0, 106, 18],
+      "cmyk": [100, 0, 83, 58],
+      "hsb": [130, 100, 42],
+      "hsl": [130, 100, 21],
+      "lab": [38, -44, 39],
+      "usage": "Subtle borders"
+    },
+    {
+      "name": "Dartmouth green",
+      "hex": "006010",
+      "rgb": [0, 96, 16],
+      "cmyk": [100, 0, 83, 62],
+      "hsb": [130, 100, 38],
+      "hsl": [130, 100, 19],
+      "lab": [35, -41, 36],
+      "usage": "Dark mode text"
+    },
+    {
+      "name": "Cal Poly green",
+      "hex": "00550E",
+      "rgb": [0, 85, 14],
+      "cmyk": [100, 0, 84, 67],
+      "hsb": [130, 100, 33],
+      "hsl": [130, 100, 17],
+      "lab": [31, -38, 33],
+      "usage": "Dark backgrounds with subtle green tint"
+    },
+    {
+      "name": "Pakistan green",
+      "hex": "004A0C",
+      "rgb": [0, 74, 12],
+      "cmyk": [100, 0, 84, 71],
+      "hsb": [130, 100, 29],
+      "hsl": [130, 100, 15],
+      "lab": [27, -34, 29],
+      "usage": "Very dark UI elements"
+    },
+    {
+      "name": "Pakistan green 2",
+      "hex": "00400B",
+      "rgb": [0, 64, 11],
+      "cmyk": [100, 0, 83, 75],
+      "hsb": [130, 100, 25],
+      "hsl": [130, 100, 13],
+      "lab": [23, -31, 26],
+      "usage": "Shadow tints"
+    },
+    {
+      "name": "Pakistan green 3",
+      "hex": "003509",
+      "rgb": [0, 53, 9],
+      "cmyk": [100, 0, 83, 79],
+      "hsb": [130, 100, 21],
+      "hsl": [130, 100, 10],
+      "lab": [18, -27, 22],
+      "usage": "Near-black with green hint"
+    },
+    {
+      "name": "Dark green",
+      "hex": "002B07",
+      "rgb": [0, 43, 7],
+      "cmyk": [100, 0, 84, 83],
+      "hsb": [130, 100, 17],
+      "hsl": [130, 100, 8],
+      "lab": [14, -24, 17],
+      "usage": "Terminal background option"
+    },
+    {
+      "name": "Dark green 2",
+      "hex": "002005",
+      "rgb": [0, 32, 5],
+      "cmyk": [100, 0, 84, 87],
+      "hsb": [129, 100, 13],
+      "hsl": [129, 100, 6],
+      "lab": [9, -18, 12],
+      "usage": "Deep shadows"
+    },
+    {
+      "name": "Night",
+      "hex": "001504",
+      "rgb": [0, 21, 4],
+      "cmyk": [100, 0, 81, 92],
+      "hsb": [131, 100, 8],
+      "hsl": [131, 100, 4],
+      "lab": [5, -9, 6],
+      "usage": "Almost black"
+    },
+    {
+      "name": "Black",
+      "hex": "000B02",
+      "rgb": [0, 11, 2],
+      "cmyk": [100, 0, 82, 96],
+      "hsb": [131, 100, 4],
+      "hsl": [131, 100, 2],
+      "lab": [2, -4, 2],
+      "usage": "Near-black base"
+    },
+    {
+      "name": "Black 2",
+      "hex": "000000",
+      "rgb": [0, 0, 0],
+      "cmyk": [0, 0, 0, 100],
+      "hsb": [0, 0, 0],
+      "hsl": [0, 0, 0],
+      "lab": [0, 0, 0],
+      "usage": "Pure black"
+    }
+  ],
+  "formats": {
+    "hex_array": ["00FF2A", "00F428", "00EA27", "00DF25", "00D523", "00CA21", "00BF20", "00B51E", "00AA1C", "009F1A", "009519", "008A17", "008015", "007513", "006A12", "006010", "00550E", "004A0C", "00400B", "003509", "002B07", "002005", "001504", "000B02", "000000"],
+    "hex_with_hash": ["#00FF2A", "#00F428", "#00EA27", "#00DF25", "#00D523", "#00CA21", "#00BF20", "#00B51E", "#00AA1C", "#009F1A", "#009519", "#008A17", "#008015", "#007513", "#006A12", "#006010", "#00550E", "#004A0C", "#00400B", "#003509", "#002B07", "#002005", "#001504", "#000B02", "#000000"],
+    "css_variables": "--green-100: #00FF2A; --green-200: #00F428; --green-300: #00EA27; --green-400: #00DF25; --green-500: #00D523; --green-600: #00CA21; --green-700: #00BF20; --green-800: #00B51E; --green-900: #00AA1C;"
+  }
+}

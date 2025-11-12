@@ -1,0 +1,272 @@
+╔════════════════════════════════════════════════════════╗
+║  PhiGEN PXE Server - Complete Package Index            ║
+║  For: 2007 MacBook Pro → Linux Mint 21.3 MATE         ║
+╚════════════════════════════════════════════════════════╝
+
+📁 PACKAGE STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 START HERE:
+  ├─ SETUP_PXE.bat ........................ Interactive launcher (RECOMMENDED)
+  └─ INSTALLATION_SUMMARY.md .............. Complete workflow overview
+
+📚 DOCUMENTATION (6 files):
+  ├─ README.md ............................ Quick overview & navigation
+  ├─ QUICK_START.md ....................... 8-phase checklist (3 pages)
+  ├─ SETUP_GUIDE.md ....................... Technical guide (30 pages)
+  ├─ DOWNLOAD_LINKS.md .................... All download URLs
+  ├─ PACKAGE_README.md .................... Complete package docs (12 pages)
+  └─ INSTALLATION_SUMMARY.md .............. Workflow summary (this priority)
+
+💻 WINDOWS SCRIPTS (3 PowerShell + 1 Batch):
+  ├─ download_isos.ps1 .................... Download all files (9.6 KB)
+  ├─ extract_boot_files.ps1 ............... Extract boot files (14 KB)
+  ├─ verify_setup.ps1 ..................... Verify configuration (13 KB)
+  └─ SETUP_PXE.bat ........................ Interactive menu (8.1 KB)
+
+🐧 LINUX SCRIPTS (1 bash):
+  └─ post_install_scripts/macbook_setup.sh  MacBook hardware setup (11.8 KB)
+
+📂 DIRECTORIES (created by scripts):
+  ├─ tftp/ ................................ TFTP boot files
+  │  ├─ pxelinux.0 ........................ PXE bootloader
+  │  ├─ *.c32 ............................. SYSLINUX modules
+  │  ├─ pxelinux.cfg/default .............. PXE menu
+  │  └─ images/ ........................... Boot images
+  │     ├─ mint/vmlinuz, initrd.lz ........ Linux Mint kernel
+  │     └─ clonezilla/vmlinuz, initrd.img . Clonezilla kernel
+  ├─ http/ ................................ HTTP/NFS root filesystem
+  │  └─ mint/casper/filesystem.squashfs ... Linux Mint root FS
+  ├─ isos/ ................................ Downloaded ISOs
+  │  ├─ linuxmint-21.3-mate-64bit.iso ..... 2.4 GB
+  │  └─ clonezilla-live-3.1.3-5-amd64.iso . 400 MB (optional)
+  ├─ tftpd64/ ............................. Tiny PXE Server
+  ├─ winnfsd/ ............................. WinNFSd (optional)
+  └─ syslinux/ ............................ SYSLINUX (extracted)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ QUICK START (3 STEPS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  Double-click: SETUP_PXE.bat
+    → Select Option 1 (Download files) - 15-45 min
+    → Select Option 2 (Extract boot files) - 5-10 min
+    → Select Option 3 (Verify setup) - 1 min
+
+2️⃣  Configure network & start server:
+    → Select Option 5 (Network settings)
+    → Set IP: 192.168.1.10, Mask: 255.255.255.0
+    → Select Option 4 (Start PXE server)
+
+3️⃣  Boot MacBook Pro:
+    → Connect to network (Ethernet)
+    → Hold Option (⌥) key during boot
+    → Select "Network Boot" (globe icon)
+    → Choose Linux Mint from PXE menu
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📖 DOCUMENTATION GUIDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+READ FIRST:        INSTALLATION_SUMMARY.md (workflow overview)
+DURING SETUP:      QUICK_START.md (step-by-step checklist)
+TROUBLESHOOTING:   SETUP_GUIDE.md (detailed technical guide)
+REFERENCE:         PACKAGE_README.md (complete documentation)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠️  SCRIPT USAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+METHOD 1: Interactive Launcher (Recommended)
+  > SETUP_PXE.bat
+  Follow on-screen menu
+
+METHOD 2: Manual PowerShell
+  > .\download_isos.ps1        # Download all files
+  > .\extract_boot_files.ps1   # Extract boot files
+  > .\verify_setup.ps1         # Verify configuration
+
+METHOD 3: Individual Commands
+  See QUICK_START.md for detailed manual setup
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 WHAT EACH FILE DOES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+download_isos.ps1:
+  ✓ Downloads Tiny PXE Server (500 KB)
+  ✓ Downloads SYSLINUX 6.03 (20 MB)
+  ✓ Downloads Linux Mint ISO (2.4 GB)
+  ✓ Downloads Clonezilla (400 MB, optional)
+  ✓ Downloads WinNFSd (200 KB, optional)
+  ✓ Auto-extracts and organizes files
+  ⏱️ Time: 15-45 minutes
+
+extract_boot_files.ps1:
+  ✓ Mounts ISOs automatically
+  ✓ Extracts vmlinuz and initrd
+  ✓ Copies root filesystem
+  ✓ Creates PXE menu
+  ✓ Unmounts ISOs cleanly
+  ⏱️ Time: 5-10 minutes
+
+verify_setup.ps1:
+  ✓ Checks all files exist
+  ✓ Validates network config (192.168.1.10)
+  ✓ Checks if PXE server running
+  ✓ Validates firewall rules
+  ✓ Detailed error/warning messages
+  ⏱️ Time: 1 minute
+
+macbook_setup.sh:
+  ✓ Installs MacBook drivers (WiFi, touchpad, webcam)
+  ✓ Configures audio (fixes MacBook quirks)
+  ✓ Sets up power management (battery optimization)
+  ✓ Installs dev tools (Python, Node.js, VS Code)
+  ✓ Installs multimedia codecs (all formats)
+  ✓ Applies MacBook fixes (keyboard, trackpad, Fn keys)
+  ✓ Optimizes for 2007 hardware
+  ✓ Creates system info script
+  ⏱️ Time: 20-30 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚙️  NETWORK CONFIGURATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PXE Server (Windows PC):
+  IP Address:      192.168.1.10 (static)
+  Subnet Mask:     255.255.255.0
+  Default Gateway: 192.168.1.1
+  DNS Server:      192.168.1.1
+
+DHCP Pool:
+  Start:           192.168.1.100
+  End:             192.168.1.150
+  Size:            50 addresses
+
+Firewall Ports:
+  DHCP:            UDP 67-68
+  TFTP:            UDP 69
+  NFS:             TCP 2049 (optional)
+  HTTP:            TCP 80 (optional)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 TARGET HARDWARE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MacBook Pro 2007 (Intel Core 2 Duo):
+  CPU:      Intel Core 2 Duo (2.2-2.4 GHz, 64-bit)
+  RAM:      2-4 GB DDR2
+  Graphics: Intel GMA X3100 or NVIDIA GeForce 8600M GT
+  WiFi:     Broadcom BCM4328 (needs proprietary driver)
+  Display:  15" or 17" (1440x900 or 1680x1050)
+  Current:  macOS 10.4.5 Tiger
+  Target:   Linux Mint 21.3 MATE (64-bit)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ EXPECTED RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After PXE Boot:
+  ✓ MacBook boots to PXE menu in ~30 seconds
+  ✓ Network boot icon in boot menu
+  ✓ PXE menu shows Linux Mint options
+  ✓ Live session boots in 2-3 minutes
+
+After Installation:
+  ✓ Clean Linux Mint 21.3 MATE install
+  ✓ GRUB bootloader working
+  ✓ System boots in 30-60 seconds
+
+After macbook_setup.sh:
+  ✓ WiFi working (Broadcom driver)
+  ✓ Trackpad working (multitouch)
+  ✓ Webcam working (iSight)
+  ✓ Audio working (all ports)
+  ✓ Brightness control working (Fn+F1/F2)
+  ✓ Battery reporting (TLP configured)
+  ✓ Function keys working (Fn+F1-F12)
+  ✓ Keyboard layout correct (Mac)
+  ✓ 3-4 hours battery life
+  ✓ Responsive performance
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 COMMON ISSUES & FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Issue: MacBook won't network boot
+Fix:   Reset NVRAM (Cmd+Opt+P+R during boot)
+
+Issue: PXE menu hangs
+Fix:   Check NFS/HTTP server, try HTTP boot
+
+Issue: WiFi not working
+Fix:   Run macbook_setup.sh (Broadcom drivers)
+
+Issue: No audio
+Fix:   Run macbook_setup.sh (audio model fix)
+
+Issue: Brightness not working
+Fix:   Run macbook_setup.sh (function key fix)
+
+Issue: Poor battery life
+Fix:   Run macbook_setup.sh (TLP + laptop-mode)
+
+See SETUP_GUIDE.md Section 8 for detailed troubleshooting
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 FILE SIZE REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Downloads:
+  Tiny PXE Server:          500 KB
+  SYSLINUX 6.03:            20 MB
+  Linux Mint 21.3 ISO:      2.4 GB
+  Clonezilla Live:          400 MB (optional)
+  WinNFSd:                  200 KB (optional)
+  Total:                    ~2.8 GB
+
+Installed:
+  Linux Mint base:          8 GB
+  After macbook_setup.sh:   10-12 GB
+  Free space needed:        15-20 GB minimum
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️  TIME ESTIMATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Phase 1: Download files             15-45 min
+Phase 2: Extract boot files         5-10 min
+Phase 3: Verify & configure         5 min
+Phase 4: Boot MacBook              5 min
+Phase 5: Install Linux Mint        20-40 min
+Phase 6: Post-install setup        20-30 min
+Total Time:                        70-135 min (1-2.5 hours)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎓 SUPPORT & RESOURCES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Documentation:
+  INSTALLATION_SUMMARY.md ........ Complete workflow
+  QUICK_START.md ................. Step-by-step guide
+  SETUP_GUIDE.md ................. Technical reference
+
+Scripts:
+  SETUP_PXE.bat .................. Interactive launcher
+  verify_setup.ps1 ............... Configuration check
+
+External:
+  Linux Mint: https://linuxmint.com/documentation.php
+  PXE Boot: https://wiki.syslinux.org/wiki/index.php?title=PXELINUX
+  MacBook: https://help.ubuntu.com/community/MacBookPro
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Package Version: 1.0
+Created: November 2025
+License: PhiGEN Project
+
+Ready to begin? Run: SETUP_PXE.bat
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
