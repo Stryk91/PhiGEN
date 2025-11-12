@@ -201,3 +201,10 @@ assets/animations/*_hq.*
 # Keep shared Claude commands and docs
 !.claude/commands/
 !.claude/*.md
+
+# ============================================
+# Scripts - File organization archives
+# ============================================
+# File system organization scripts (user-specific)
+scripts/FILE_SYSTEMS_ORG_SCRIPTS*/
+scripts/*.zip
